@@ -1,0 +1,1 @@
+{ "name": "build:static", "script": "VITE_STATIC_DEPLOY=true vite build --config vite.config.static.ts" }
