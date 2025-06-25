@@ -40,6 +40,8 @@ This is a modern full-stack web application featuring a personal portfolio for H
 
 ### Backend Services
 - **Contact API**: Form submission endpoint with validation
+- **AI Generation API**: Google Gemini integration for image/video generation
+- **Model Management API**: MLOps system for model inference and reports
 - **Static File Serving**: Vite integration for development and production
 - **Error Handling**: Centralized error middleware
 - **Request Logging**: Custom middleware for API request tracking
@@ -103,12 +105,26 @@ This is a modern full-stack web application featuring a personal portfolio for H
 - **Migration Directory**: `./migrations` for version control
 - **Schema Location**: `./shared/schema.ts` for type-safe database definitions
 
-## Changelog
+## Recent Changes
 
-```
-Changelog:
-- June 25, 2025. Initial setup
-```
+### AI Content Generation Project (June 25, 2025)
+- Added interactive AI image/video generator using Google Gemini API
+- Implemented real-time text-to-image generation with prompt optimization
+- Created dedicated /ai-generator route with professional UI
+- Added video concept generation and prompt analysis features
+
+### MLOps Model Showcase (June 25, 2025)  
+- Built comprehensive model management system for Transformer, ResNet50, and Scikit-learn models
+- Implemented real-time model inference APIs with performance metrics
+- Created interactive model showcase at /models route
+- Added technical report generation and model comparison features
+- Integrated metadata management and prediction confidence scoring
+
+### Portfolio Enhancement (June 25, 2025)
+- Updated projects section with live demo links for internal navigation
+- Fixed CSS import ordering and navigation warnings
+- Enhanced mobile responsiveness and smooth hover animations
+- Added comprehensive error handling and loading states
 
 ## User Preferences
 

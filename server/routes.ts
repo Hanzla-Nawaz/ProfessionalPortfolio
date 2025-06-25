@@ -1,6 +1,7 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { generateImage, generateVideo, analyzePrompt } from "./ai-generation";
+import { modelManager } from "./model-manager";
 import * as fs from "fs";
 import * as path from "path";
 
@@ -178,6 +179,106 @@ export async function registerRoutes(app: Express): Promise<Server> {
         success: false,
         message: "Internal server error during prompt analysis"
       });
+    }
+  });
+
+  // Model Management endpoints
+  app.get("/api/models", (req, res) => {
+    try {
+      const models = modelManager.getModels();
+      res.json({ success: true, models });
+    } catch (error) {
+      console.error("Error fetching models:", error);
+      res.status(500).json({ success: false, message: "Failed to fetch models" });
+    }
+  });
+
+  app.get("/api/models/:id", (req, res) => {
+    try {
+      const { id } = req.params;
+      const model = modelManager.getModelById(id);
+      
+      if (!model) {
+        return res.status(404).json({ success: false, message: "Model not found" });
+      }
+      
+      res.json({ success: true, model });
+    } catch (error) {
+      console.error("Error fetching model:", error);
+      res.status(500).json({ success: false, message: "Failed to fetch model" });
+    }
+  });
+
+  app.post("/api/models/:id/predict", async (req, res) => {
+    try {
+      const { id } = req.params;
+      const { inputData } = req.body;
+      
+      if (!inputData) {
+        return res.status(400).json({ success: false, message: "Input data is required" });
+      }
+
+      const prediction = await modelManager.predictWithModel(id, inputData);
+      res.json({ success: true, prediction });
+    } catch (error) {
+      console.error("Model prediction error:", error);
+      res.status(500).json({ 
+        success: false, 
+        message: error instanceof Error ? error.message : "Prediction failed" 
+      });
+    }
+  });
+
+  app.post("/api/models/:id/report", async (req, res) => {
+    try {
+      const { id } = req.params;
+      const report = await modelManager.generateModelReport(id);
+      res.json({ success: true, report });
+    } catch (error) {
+      console.error("Model report generation error:", error);
+      res.status(500).json({ 
+        success: false, 
+        message: error instanceof Error ? error.message : "Report generation failed" 
+      });
+    }
+  });
+
+  app.post("/api/models/register", async (req, res) => {
+    try {
+      const modelInfo = req.body;
+      
+      // Validate required fields
+      if (!modelInfo.name || !modelInfo.type || !modelInfo.description) {
+        return res.status(400).json({ 
+          success: false, 
+          message: "Name, type, and description are required" 
+        });
+      }
+
+      const modelId = await modelManager.registerModel(modelInfo);
+      res.json({ success: true, modelId, message: "Model registered successfully" });
+    } catch (error) {
+      console.error("Model registration error:", error);
+      res.status(500).json({ 
+        success: false, 
+        message: "Failed to register model" 
+      });
+    }
+  });
+
+  app.delete("/api/models/:id", (req, res) => {
+    try {
+      const { id } = req.params;
+      const deleted = modelManager.deleteModel(id);
+      
+      if (!deleted) {
+        return res.status(404).json({ success: false, message: "Model not found" });
+      }
+      
+      res.json({ success: true, message: "Model deleted successfully" });
+    } catch (error) {
+      console.error("Model deletion error:", error);
+      res.status(500).json({ success: false, message: "Failed to delete model" });
     }
   });
 

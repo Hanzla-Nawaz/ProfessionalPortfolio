@@ -133,6 +133,20 @@ export const projectsData = [
     caseStudyUrl: "#"
   },
   {
+    title: "ML Model Showcase",
+    description: "Interactive demonstration of trained Transformer, ResNet50, and Scikit-learn models with real-time inference capabilities and performance metrics.",
+    image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=300",
+    technologies: [
+      { name: "PyTorch", color: "bg-red-100 text-red-700" },
+      { name: "TensorFlow", color: "bg-orange-100 text-orange-700" },
+      { name: "Scikit-learn", color: "bg-blue-100 text-blue-700" },
+      { name: "MLOps", color: "bg-purple-100 text-purple-700" }
+    ],
+    githubUrl: "https://github.com/Hanzla-Nawaz",
+    demoUrl: "/models",
+    caseStudyUrl: "#"
+  },
+  {
     title: "Explore More Projects",
     description: "Discover additional AI and machine learning projects including hackathon submissions, research experiments, and open-source contributions.",
     image: "https://images.unsplash.com/photo-1527474305487-b87b222841cc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=300",

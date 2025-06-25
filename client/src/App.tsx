@@ -5,6 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Home from "@/pages/home";
 import AIGeneratorPage from "@/pages/ai-generator";
+import ModelShowcasePage from "@/pages/model-showcase";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -12,6 +13,7 @@ function Router() {
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/ai-generator" component={AIGeneratorPage} />
+      <Route path="/models" component={ModelShowcasePage} />
       <Route component={NotFound} />
     </Switch>
   );
