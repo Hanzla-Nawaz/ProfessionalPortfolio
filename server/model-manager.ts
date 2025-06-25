@@ -1,6 +1,8 @@
 import * as fs from "fs";
 import * as path from "path";
 import { GoogleGenAI } from "@google/genai";
+import { storage } from "./storage";
+import { type Model, type InsertModel } from "@shared/schema";
 
 const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY || "" });
 
@@ -23,12 +25,10 @@ export interface ModelInfo {
 
 export class ModelManager {
   private modelsDir: string;
-  private modelsMetadata: ModelInfo[];
 
   constructor() {
     this.modelsDir = path.join(process.cwd(), "models");
     this.ensureModelsDirectory();
-    this.modelsMetadata = this.loadModelsMetadata();
   }
 
   private ensureModelsDirectory() {
@@ -37,49 +37,61 @@ export class ModelManager {
     }
   }
 
-  private loadModelsMetadata(): ModelInfo[] {
-    const metadataPath = path.join(this.modelsDir, "models_metadata.json");
-    if (fs.existsSync(metadataPath)) {
-      try {
-        return JSON.parse(fs.readFileSync(metadataPath, 'utf8'));
-      } catch (error) {
-        console.error("Error loading models metadata:", error);
-        return [];
-      }
-    }
-    return [];
-  }
-
-  private saveModelsMetadata() {
-    const metadataPath = path.join(this.modelsDir, "models_metadata.json");
-    fs.writeFileSync(metadataPath, JSON.stringify(this.modelsMetadata, null, 2));
-  }
-
   async registerModel(modelInfo: Omit<ModelInfo, 'id'>): Promise<string> {
     const id = `model_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
-    const newModel: ModelInfo = {
+    
+    const insertModel: InsertModel = {
       id,
-      ...modelInfo
+      name: modelInfo.name,
+      type: modelInfo.type,
+      description: modelInfo.description,
+      accuracy: modelInfo.accuracy ? modelInfo.accuracy.toString() : null,
+      trainedOn: modelInfo.trainedOn,
+      size: modelInfo.size,
+      filePath: modelInfo.filePath,
+      metadata: modelInfo.metadata
     };
     
-    this.modelsMetadata.push(newModel);
-    this.saveModelsMetadata();
+    await storage.createModel(insertModel);
     return id;
   }
 
-  getModels(): ModelInfo[] {
-    return this.modelsMetadata;
+  async getModels(): Promise<ModelInfo[]> {
+    const models = await storage.getModels();
+    return models.map(this.convertToModelInfo);
   }
 
-  getModelById(id: string): ModelInfo | undefined {
-    return this.modelsMetadata.find(model => model.id === id);
+  async getModelById(id: string): Promise<ModelInfo | undefined> {
+    const model = await storage.getModelById(id);
+    return model ? this.convertToModelInfo(model) : undefined;
+  }
+
+  private convertToModelInfo(model: Model): ModelInfo {
+    const modelInfo: ModelInfo = {
+      id: model.id,
+      name: model.name,
+      type: model.type as 'transformer' | 'resnet50' | 'sklearn',
+      description: model.description,
+      accuracy: model.accuracy ? parseFloat(model.accuracy) : undefined,
+      trainedOn: model.trainedOn,
+      size: model.size,
+      filePath: model.filePath,
+      metadata: typeof model.metadata === 'string' 
+        ? JSON.parse(model.metadata) 
+        : model.metadata as ModelInfo['metadata']
+    };
+    
+    console.log(`Converting model: ${model.name}, type: ${model.type} -> ${modelInfo.type}`);
+    return modelInfo;
   }
 
   async predictWithModel(modelId: string, inputData: any): Promise<any> {
-    const model = this.getModelById(modelId);
+    const model = await this.getModelById(modelId);
     if (!model) {
       throw new Error(`Model with ID ${modelId} not found`);
     }
+
+    console.log(`Model type for prediction: ${model.type}, Model name: ${model.name}`);
 
     // For demonstration, we'll simulate model predictions
     // In a real implementation, you'd load and run the actual models
@@ -91,7 +103,7 @@ export class ModelManager {
       case 'sklearn':
         return this.simulateSklearnPrediction(model, inputData);
       default:
-        throw new Error(`Unsupported model type: ${model.type}`);
+        throw new Error(`Unsupported model type: ${model.type} (debug: ${JSON.stringify(model)})`);
     }
   }
 
@@ -162,7 +174,7 @@ export class ModelManager {
         
         Name: ${model.name}
         Type: ${model.type}
-        Framework: ${model.metadata.framework}
+        Framework: ${model.metadata?.framework || 'Unknown'}
         Accuracy: ${model.accuracy}%
         Trained on: ${model.trainedOn}
         
@@ -175,13 +187,11 @@ export class ModelManager {
     }
   }
 
-  deleteModel(modelId: string): boolean {
-    const index = this.modelsMetadata.findIndex(model => model.id === modelId);
-    if (index === -1) {
+  async deleteModel(modelId: string): Promise<boolean> {
+    const model = await storage.getModelById(modelId);
+    if (!model) {
       return false;
     }
-
-    const model = this.modelsMetadata[index];
     
     // Delete model file if it exists
     if (fs.existsSync(model.filePath)) {
@@ -192,15 +202,13 @@ export class ModelManager {
       }
     }
 
-    // Remove from metadata
-    this.modelsMetadata.splice(index, 1);
-    this.saveModelsMetadata();
-    return true;
+    // Remove from database
+    return await storage.deleteModel(modelId);
   }
 }
 
 // Initialize default models for demonstration
-export function initializeDefaultModels(manager: ModelManager) {
+export async function initializeDefaultModels(manager: ModelManager) {
   const defaultModels: Omit<ModelInfo, 'id'>[] = [
     {
       name: "BERT Sentiment Analyzer",
@@ -262,12 +270,12 @@ export function initializeDefaultModels(manager: ModelManager) {
   ];
 
   // Only add if no models exist
-  if (manager.getModels().length === 0) {
-    defaultModels.forEach(async (model) => {
+  const existingModels = await manager.getModels();
+  if (existingModels.length === 0) {
+    for (const model of defaultModels) {
       await manager.registerModel(model);
-    });
+    }
   }
 }
 
 export const modelManager = new ModelManager();
-initializeDefaultModels(modelManager);

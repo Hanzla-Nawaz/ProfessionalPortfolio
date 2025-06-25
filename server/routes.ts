@@ -1,39 +1,32 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { generateImage, generateVideo, analyzePrompt } from "./ai-generation";
-import { modelManager } from "./model-manager";
+import { modelManager, initializeDefaultModels } from "./model-manager";
+import { storage } from "./storage";
+import { insertContactSchema } from "@shared/schema";
 import * as fs from "fs";
 import * as path from "path";
 
 export async function registerRoutes(app: Express): Promise<Server> {
+  // Initialize default models
+  await initializeDefaultModels(modelManager);
+
   // Contact form submission endpoint
   app.post("/api/contact", async (req, res) => {
     try {
-      const { name, email, subject, message } = req.body;
-      
-      // Validate required fields
-      if (!name || !email || !subject || !message) {
-        return res.status(400).json({ 
-          message: "All fields are required" 
-        });
-      }
+      // Validate using schema
+      const contactData = insertContactSchema.parse(req.body);
       
       // Basic email validation
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailRegex.test(email)) {
+      if (!emailRegex.test(contactData.email)) {
         return res.status(400).json({ 
           message: "Invalid email format" 
         });
       }
       
-      // Log the contact form submission (in production, you'd send an email or store in database)
-      console.log("Contact form submission:", {
-        name,
-        email,
-        subject,
-        message,
-        timestamp: new Date().toISOString()
-      });
+      // Store in database
+      await storage.createContact(contactData);
       
       // Send success response
       res.json({ 
@@ -183,9 +176,9 @@ export async function registerRoutes(app: Express): Promise<Server> {
   });
 
   // Model Management endpoints
-  app.get("/api/models", (req, res) => {
+  app.get("/api/models", async (req, res) => {
     try {
-      const models = modelManager.getModels();
+      const models = await modelManager.getModels();
       res.json({ success: true, models });
     } catch (error) {
       console.error("Error fetching models:", error);
@@ -193,10 +186,10 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  app.get("/api/models/:id", (req, res) => {
+  app.get("/api/models/:id", async (req, res) => {
     try {
       const { id } = req.params;
-      const model = modelManager.getModelById(id);
+      const model = await modelManager.getModelById(id);
       
       if (!model) {
         return res.status(404).json({ success: false, message: "Model not found" });
@@ -266,10 +259,10 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  app.delete("/api/models/:id", (req, res) => {
+  app.delete("/api/models/:id", async (req, res) => {
     try {
       const { id } = req.params;
-      const deleted = modelManager.deleteModel(id);
+      const deleted = await modelManager.deleteModel(id);
       
       if (!deleted) {
         return res.status(404).json({ success: false, message: "Model not found" });
