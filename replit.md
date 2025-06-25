@@ -137,4 +137,7 @@ This is a modern full-stack web application featuring a personal portfolio for H
 
 ```
 Preferred communication style: Simple, everyday language.
+Code style: Professional, reactive, and responsive React with Tailwind CSS
+Deployment preference: GitHub Pages for free hosting with professional standards
+UI/UX preference: Modern, clean design with smooth animations and micro-interactions
 ```
