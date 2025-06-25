@@ -49,6 +49,20 @@ export const experienceData = [
 
 export const projectsData = [
   {
+    title: "AI Content Generator",
+    description: "Interactive web application using Google Gemini AI for real-time image generation and video concepts. Features prompt analysis and optimization suggestions.",
+    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=300",
+    technologies: [
+      { name: "Google Gemini", color: "bg-blue-100 text-blue-700" },
+      { name: "React", color: "bg-cyan-100 text-cyan-700" },
+      { name: "TypeScript", color: "bg-blue-100 text-blue-700" },
+      { name: "FastAPI", color: "bg-green-100 text-green-700" }
+    ],
+    githubUrl: "https://github.com/Hanzla-Nawaz",
+    demoUrl: "/ai-generator",
+    caseStudyUrl: "#"
+  },
+  {
     title: "Data Science Assistant Toolkit (DSATK)",
     description: "Python-based toolkit automating data science workflows including data cleaning, feature engineering, and model training with MLflow integration.",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=300",

@@ -1,4 +1,5 @@
 import { ExternalLink, Github, FileText } from "lucide-react";
+import { Link } from "wouter";
 import { projectsData } from "@/lib/data";
 
 export default function ProjectsSection() {
@@ -44,15 +45,22 @@ export default function ProjectsSection() {
                     </a>
                   )}
                   {project.demoUrl && (
-                    <a
-                      href={project.demoUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex-1 border border-primary text-primary hover:bg-primary hover:text-primary-foreground text-center py-2 px-4 rounded-lg text-sm font-medium transition-colors duration-200 flex items-center justify-center gap-2"
-                    >
-                      <ExternalLink className="w-4 h-4" />
-                      Demo
-                    </a>
+                    project.demoUrl.startsWith('/') ? (
+                      <Link href={project.demoUrl} className="flex-1 border border-primary text-primary hover:bg-primary hover:text-primary-foreground text-center py-2 px-4 rounded-lg text-sm font-medium transition-colors duration-200 flex items-center justify-center gap-2">
+                        <ExternalLink className="w-4 h-4" />
+                        Live Demo
+                      </Link>
+                    ) : (
+                      <a
+                        href={project.demoUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-1 border border-primary text-primary hover:bg-primary hover:text-primary-foreground text-center py-2 px-4 rounded-lg text-sm font-medium transition-colors duration-200 flex items-center justify-center gap-2"
+                      >
+                        <ExternalLink className="w-4 h-4" />
+                        Demo
+                      </a>
+                    )
                   )}
                   {project.caseStudyUrl && (
                     <a
