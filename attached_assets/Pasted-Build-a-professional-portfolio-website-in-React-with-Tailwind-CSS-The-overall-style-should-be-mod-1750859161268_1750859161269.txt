@@ -1,0 +1,45 @@
+Build a professional portfolio website in React with Tailwind CSS. The overall style should be **modern and minimalist**: use a clean, uncluttered layout with a white or light-gray background, plenty of whitespace, and one bold accent color for buttons and links. The site must be fully **responsive (mobile-first)**, with readable typography and intuitive navigation.
+
+Include these sections:
+
+1. **About (Education & Experience):**  
+   - Header with my name, photo, and a brief intro (education, skills, experience, background).
+
+2. **Projects Gallery:**  
+   - Grid of project cards with thumbnail images.  
+   - Under each image, three elements:  
+     - Link/button to **live demo** or deployed site.  
+     - Link/button to **GitHub repo**.  
+     - Button to open **project documentation** (PDF or external link).  
+   - **Interactive ML/DL Demos:**  
+     - For any trained model (e.g., ResNet image classifier, Transformer text generator), embed a small UI widget where visitors can upload an example or type text and see model output in real-time.  
+     - **Model training code and raw artifacts** live in a **private GitHub repo** or cloud drive; only the compiled frontend (UI) is published to GitHub Pages.
+
+3. **Certificates & Trainings:**  
+   - Grid of certificate/training images or logos.  
+   - If there’s an online verification link, make the image clickable to verify; otherwise just show the image preview.
+
+4. **Volunteer & Community:**  
+   - Showcase any volunteer work, open-source contributions, or community projects.
+
+5. **Blog:**  
+   - A blog section styled like Medium: list of posts with title, date, short excerpt, and “Read More” links.  
+   - Manage posts via markdown files or a simple headless CMS—no need to redeploy for each new post.  
+   - **Raw `.md` files** remain private; only the generated HTML is served.
+
+6. **Contact:**  
+   - Functional contact form (e.g., via Formspree or EmailJS).  
+   - Social icons linking to LinkedIn, GitHub, Twitter, etc.
+
+**Extra Requirements & Features:**  
+- All **source code** for interactive demos, model training scripts, and raw blog posts must reside in a **single private repo**.  
+- Include a **GitHub Actions** workflow that on every push builds the React/Tailwind site (`npm ci && npm run build`) and deploys **only** the `build/` folder to the **gh-pages** branch.  
+- Configure GitHub Pages to serve from the **gh-pages** branch, so only the static frontend appears at `https://username.github.io/`.  
+- Subtle UI polish: smooth hover animations on buttons/links, soft shadows, rounded corners.  
+- Sticky navbar and a “back to top” button.  
+- Dark-mode toggle.  
+- Scroll-triggered animations (e.g., Framer Motion).  
+- SEO metadata and Open Graph tags for social sharing.  
+- Must be optimized for fast loading and deployable as a **static site** on GitHub Pages.
+
+Generate this site with placeholder content and images—I'll swap in my real data later.```

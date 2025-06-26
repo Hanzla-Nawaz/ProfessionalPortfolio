@@ -1,143 +1,124 @@
-# replit.md
+# Portfolio Website - replit.md
 
 ## Overview
 
-This is a modern full-stack web application featuring a personal portfolio for Hanzla Nawaz, an AI/ML Engineer. The application showcases a React-based frontend with a Node.js Express backend, designed to highlight professional experience, projects, skills, and provide contact functionality.
+This is a professional portfolio website for Hanzla Nawaz, an AI/ML Engineer. The application is built as a full-stack web application using React for the frontend and Express.js for the backend, with a PostgreSQL database for data persistence. The portfolio showcases projects, experience, certificates, and includes interactive features like contact forms and blog sections.
 
 ## System Architecture
 
 ### Frontend Architecture
 - **Framework**: React 18 with TypeScript
-- **Styling**: Tailwind CSS with shadcn/ui component library
 - **Routing**: Wouter for client-side routing
+- **UI Components**: Shadcn/ui component library with Radix UI primitives
+- **Styling**: Tailwind CSS with custom design system
 - **State Management**: TanStack Query for server state management
-- **Build Tool**: Vite for development and build processes
+- **Form Handling**: React Hook Form with Zod validation
+- **Theme Support**: Built-in dark/light mode with system preference detection
 
 ### Backend Architecture
 - **Runtime**: Node.js with Express.js framework
 - **Language**: TypeScript with ES modules
-- **API Style**: RESTful API endpoints
-- **Development**: Hot reload with tsx for development server
+- **API Design**: RESTful API structure (routes to be implemented)
+- **Request Logging**: Custom middleware for API request logging
+- **Error Handling**: Centralized error handling middleware
 
-### UI Components
-- **Design System**: shadcn/ui with Radix UI primitives
-- **Theme**: Customizable CSS variables with light/dark mode support
-- **Responsive Design**: Mobile-first approach with Tailwind breakpoints
+### Database & ORM
+- **Database**: PostgreSQL (configured for Neon serverless)
+- **ORM**: Drizzle ORM with Drizzle Kit for migrations
+- **Schema**: User authentication schema (extensible for portfolio data)
+- **Connection**: Neon serverless PostgreSQL driver
 
 ## Key Components
 
 ### Frontend Components
-- **Navigation**: Sticky navigation with smooth scroll functionality
-- **Hero Section**: Professional introduction with call-to-action buttons
-- **About Section**: Educational background and professional focus
-- **Experience Section**: Timeline-based work history display
-- **Projects Section**: Featured projects with technology tags and links
-- **Skills Section**: Categorized technical skills with visual tags
-- **Certifications Section**: Professional certifications and achievements
-- **Blog Section**: External Medium blog integration
-- **Contact Section**: Contact form with validation and submission handling
-- **Footer**: Site navigation and professional information
+- **Layout Components**: Navbar with smooth scrolling, responsive design
+- **Portfolio Sections**: Hero, Experience, Projects, Certificates, Volunteer work, Blog, Contact
+- **Interactive Features**: 
+  - Scroll animations with Intersection Observer
+  - Mobile-responsive navigation
+  - Image upload for project demos
+  - Contact form with toast notifications
+- **UI System**: Complete design system with consistent theming
 
-### Backend Services
-- **Contact API**: Form submission endpoint with validation
-- **AI Generation API**: Google Gemini integration for image/video generation
-- **Model Management API**: MLOps system for model inference and reports
-- **Static File Serving**: Vite integration for development and production
-- **Error Handling**: Centralized error middleware
-- **Request Logging**: Custom middleware for API request tracking
+### Backend Components
+- **Storage Layer**: Abstracted storage interface with in-memory implementation (ready for database integration)
+- **Authentication Ready**: User schema and CRUD operations defined
+- **Development Tools**: Vite integration for hot module replacement in development
 
-### Database Layer
-- **ORM**: Drizzle ORM with PostgreSQL dialect
-- **Schema**: User management with username/password authentication
-- **Migration**: Drizzle-kit for database schema management
-- **Connection**: Neon Database serverless PostgreSQL
+### Build System
+- **Frontend Build**: Vite with React plugin and custom aliases
+- **Backend Build**: ESBuild for server-side bundling
+- **Development**: Concurrent development with hot reloading
+- **Production**: Static file serving with Express
 
 ## Data Flow
 
-1. **Client Requests**: React frontend makes API calls using fetch
-2. **Backend Processing**: Express routes handle requests with validation
-3. **Database Operations**: Drizzle ORM manages database interactions
-4. **Response Handling**: Structured JSON responses with error handling
-5. **State Management**: TanStack Query caches and synchronizes server state
+1. **Client Requests**: React Router handles client-side navigation
+2. **API Communication**: TanStack Query manages server communication with automatic caching
+3. **Server Processing**: Express routes handle API requests (authentication, data CRUD)
+4. **Database Operations**: Drizzle ORM provides type-safe database interactions
+5. **Response Handling**: Standardized JSON responses with error handling
+6. **State Updates**: Query cache invalidation triggers UI updates
 
 ## External Dependencies
 
-### Frontend Dependencies
-- React ecosystem (React, React DOM, React Router alternative)
-- UI libraries (Radix UI, Lucide icons, class-variance-authority)
-- Styling (Tailwind CSS, clsx, tailwind-merge)
-- State management (TanStack Query)
-- Form handling (React Hook Form, Hookform resolvers)
-- Date utilities (date-fns)
-
-### Backend Dependencies
+### Core Framework Dependencies
+- React ecosystem (React, React-DOM, React Router alternative Wouter)
 - Express.js with TypeScript support
-- Database (Drizzle ORM, Neon Database connector)
-- Development tools (tsx, esbuild)
-- Session management (connect-pg-simple)
-- Validation (Zod, drizzle-zod)
+- Drizzle ORM with PostgreSQL adapter
+
+### UI & Styling
+- Tailwind CSS for utility-first styling
+- Radix UI primitives for accessible components
+- Lucide React for icons
+- Custom fonts (Inter) loaded via Google Fonts
 
 ### Development Tools
-- Vite for build tooling and development server
+- Vite for frontend bundling and development
+- ESBuild for backend bundling
 - TypeScript for type safety
-- ESLint and Prettier for code quality
-- PostCSS for CSS processing
+- Drizzle Kit for database migrations
+
+### External Services
+- Neon Database for PostgreSQL hosting
+- Replit for development environment
+- Email service integration ready (contact form)
 
 ## Deployment Strategy
 
 ### Development Environment
-- **Command**: `npm run dev` - Runs development server with hot reload
-- **Port**: 5000 (configured in .replit)
-- **Database**: PostgreSQL 16 module in Replit environment
+- **Platform**: Replit with Node.js 20 runtime
+- **Database**: PostgreSQL 16 module in Replit
+- **Hot Reloading**: Vite dev server with Express proxy
+- **Port Configuration**: Internal port 5000, external port 80
 
-### Production Build
-- **Frontend Build**: Vite builds optimized static assets to `dist/public`
-- **Backend Build**: esbuild bundles server code to `dist/index.js`
-- **Start Command**: `npm run start` - Runs production server
+### Production Build Process
+1. **Frontend Build**: Vite builds React app to `dist/public`
+2. **Backend Build**: ESBuild bundles server to `dist/index.js`
+3. **Asset Handling**: Static files served from build directory
+4. **Database**: Automated migrations via Drizzle Kit
 
-### Platform Configuration
-- **Replit Modules**: Node.js 20, Web, PostgreSQL 16
-- **Deployment Target**: Autoscale deployment
-- **Environment Variables**: DATABASE_URL for PostgreSQL connection
-
-### Database Management
-- **Push Changes**: `npm run db:push` - Applies schema changes to database
-- **Migration Directory**: `./migrations` for version control
-- **Schema Location**: `./shared/schema.ts` for type-safe database definitions
-
-## Recent Changes
-
-### GitHub Pages Deployment Configuration (June 25, 2025)
-- Configured static deployment for free GitHub Pages hosting
-- Created dual-mode API handling (dynamic for Replit, static for GitHub Pages)
-- Built GitHub Actions workflow for automatic deployment
-- Added static data simulation for model predictions and AI features
-- Generated comprehensive deployment documentation and scripts
-
-### AI Content Generation Project (June 25, 2025)
-- Added interactive AI image/video generator using Google Gemini API
-- Implemented real-time text-to-image generation with prompt optimization
-- Created dedicated /ai-generator route with professional UI
-- Added video concept generation and prompt analysis features
-
-### MLOps Model Showcase (June 25, 2025)  
-- Built comprehensive model management system for Transformer, ResNet50, and Scikit-learn models
-- Implemented real-time model inference APIs with performance metrics
-- Created interactive model showcase at /models route
-- Added technical report generation and model comparison features
-- Integrated metadata management and prediction confidence scoring
-
-### Portfolio Enhancement (June 25, 2025)
-- Updated projects section with live demo links for internal navigation
-- Fixed CSS import ordering and navigation warnings
-- Enhanced mobile responsiveness and smooth hover animations
-- Added comprehensive error handling and loading states
+### Deployment Configuration
+- **Target**: Autoscale deployment on Replit
+- **Build Command**: `npm run build` (builds both frontend and backend)
+- **Start Command**: `npm run start` (runs production server)
+- **Environment Variables**: Database URL configuration required
 
 ## User Preferences
 
-```
 Preferred communication style: Simple, everyday language.
-Code style: Professional, reactive, and responsive React with Tailwind CSS
-Deployment preference: GitHub Pages for free hosting with professional standards
-UI/UX preference: Modern, clean design with smooth animations and micro-interactions
-```
+
+## Recent Changes
+
+✓ Enhanced portfolio with professional features for academic and industry applications
+✓ Added comprehensive Skills section with interactive progress bars
+✓ Created Professional Achievements section for recognition and contributions
+✓ Enhanced Hero section with expertise areas focus
+✓ Improved project cards with technology badges and qualitative impact descriptions
+✓ Removed placeholder metrics and made content authentic to user's experience
+✓ Set up GitHub Pages deployment with automated CI/CD pipeline
+✓ Created deployment scripts and comprehensive documentation
+
+## Changelog
+
+- June 25, 2025: Enhanced portfolio for academic/industry applications with skills visualization, research section, and GitHub Pages deployment setup

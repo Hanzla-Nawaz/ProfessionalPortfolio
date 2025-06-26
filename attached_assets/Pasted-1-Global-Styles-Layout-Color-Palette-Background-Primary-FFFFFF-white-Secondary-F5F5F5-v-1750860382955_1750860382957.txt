@@ -1,0 +1,227 @@
+1. Global Styles & Layout
+Color Palette
+Background:
+
+Primary: #FFFFFF (white)
+
+Secondary: #F5F5F5 (very light gray)
+
+Text:
+
+Primary: #111827 (nearly black)
+
+Secondary: #6B7280 (medium gray)
+
+Accent (choose one—e.g. blue/orange):
+
+Accent-Light: #3B82F6 (blue-500)
+
+Accent-Dark (hover): #2563EB (blue-600)
+
+Shadows & Elevation:
+
+Card shadow: 0 2px 4px rgba(0,0,0,0.05)
+
+Button shadow: 0 1px 2px rgba(0,0,0,0.1)
+
+Typography
+Font Family:
+
+Sans-serif: Inter, fallback system-ui
+
+Scale:
+
+H1: 2.25rem (36px) / 700 weight
+
+H2: 1.875rem (30px) / 600 weight
+
+H3: 1.5rem (24px) / 600 weight
+
+Body: 1rem (16px) / 400 weight
+
+Small text: 0.875rem (14px) / 400 weight
+
+Line-Height: 1.5 for all paragraphs
+
+Grid & Spacing
+Container:
+
+Max-width: 1,120px; auto margins
+
+Padding: 1.5rem (24px) side on mobile; 2rem (32px) on desktop
+
+Breakpoints:
+
+Mobile: up to 640px
+
+Tablet: 641 – 1024px
+
+Desktop: 1025px and above
+
+Gutters:
+
+Vertical spacing between sections: 4rem (64px) on desktop; 3rem (48px) on tablet; 2rem (32px) on mobile
+
+Horizontal grid between cards: 1rem (16px)
+
+Interactive Details
+Buttons:
+
+Padding: 0.75rem 1.5rem (12px × 24px)
+
+Border-radius: 0.5rem (8px)
+
+Hover: darken by 10%, lift shadow
+
+Links:
+
+Underline on hover, color = accent
+
+Navbar:
+
+Sticky at top, background fades to white with 80% opacity when scrolled
+
+Logo/name on left, menu items on right
+
+“Back to top” button:
+
+Circular 3rem (48px) fixed bottom-right on desktop; hidden below tablet
+
+Fade-in when scroll > viewport height
+
+2. Section—By—Section
+A. Hero / About
+Layout: Two-column on desktop; single-column on mobile
+
+Left (Desktop):
+
+Large heading (H1): your name
+
+Subheading (H2): your title (e.g. “AI & ML Engineer”)
+
+Short paragraph (body text)
+
+Two CTA buttons: “Download Resume” (solid accent) and “View Projects” (outlined)
+
+Right:
+
+Circular avatar image (200 × 200px on desktop, 120 × 120px on mobile)
+
+Spacing: 4rem bottom margin before next section
+
+B. Education & Experience
+Title: H2 (“Education & Experience”) centered
+
+Content:
+
+Horizontal timeline on desktop; vertical on mobile
+
+Each entry:
+
+Year range (small text, semi-bold)
+
+Role / degree title (H3)
+
+Institution / company (body text)
+
+Short description (small text, italic or lighter color)
+
+Card Style: subtle white cards with shadow and 1rem padding
+
+C. Projects Gallery
+Title: H2 left-aligned
+
+Grid:
+
+Desktop: 3 columns; tablet: 2 columns; mobile: 1 column
+
+Gap: 1.5rem
+
+Card:
+
+Image top (16:9 aspect ratio, object-cover)
+
+Beneath: project title (H3), short description (small text)
+
+Button row: three equal buttons
+
+Live Demo (solid accent)
+
+GitHub (outlined)
+
+Docs (outline + icon)
+
+Hover effect: card lifts by 4px, shadow intensifies
+
+Interactive ML Demo Cards:
+
+Slightly taller to accommodate small input area (e.g. file uploader or text field + “Run” button)
+
+Output preview area below controls
+
+D. Certificates & Trainings
+Layout:
+
+Carousel on desktop or grid (4 columns) on wider screens; 2 columns on tablet; 1 column on mobile
+
+Item:
+
+Logo/cert image (max-height 120px, centered)
+
+If clickable, wrap in link and add hover scale effect (1.05×)
+
+E. Volunteer & Community
+Layout: Similar to Education cards—small white cards in 2-column grid on desktop
+
+Card Content:
+
+Title (organization name), role/description, date range
+
+Icon or small logo top-left
+
+F. Blog
+Title: H2 left-aligned
+
+List:
+
+Vertical list of post previews:
+
+Title (H3)
+
+Date & tags (small text)
+
+Excerpt (body text)
+
+“Read More →” link in accent color
+
+Spacing: 2rem between items
+
+Pagination: at bottom, numbered links
+
+G. Contact
+Layout: Two-column on desktop (form + social links side by side); single column on mobile
+
+Form Fields: Name, Email, Message (textarea)
+
+Submit Button: full-width on mobile; inline on desktop (solid accent)
+
+Social Icons: inline SVG icons with hover color fill = accent
+
+3. Responsive Behavior
+Breakpoint	Navbar	Hero Layout	Projects Grid	Certificates
+Mobile	Hamburger	Single column	1 col	1 col carousel
+Tablet	Standard	Single column	2 cols	2 cols grid
+Desktop	Standard	Two columns	3 cols	4 cols grid
+
+Font scaling: reduce H1 by 10% on mobile; adjust paddings by 20%
+
+Touch targets: all buttons and links ≥ 44 × 44 px
+
+4. Assets & Handoff
+Design file (Figma/Sketch): include artboards for mobile, tablet, and desktop.
+
+Style guide page: define color swatches, typography scale, and button styles.
+
+Component library: in the design tool, create reusable components for Navbar, Card, Button, Form, etc.
+
+Interaction specs: document hover states, click animations, sticky navbar behavior, and scroll-triggered fades.
