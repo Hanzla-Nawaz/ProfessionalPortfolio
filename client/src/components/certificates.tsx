@@ -17,7 +17,7 @@ export default function Certificates() {
   const [certificates, setCertificates] = useState<string[]>([]);
 
   useEffect(() => {
-    // List of all certificate PDFs in public/certificates
+    // List of all certificate PDFs in public/certificates (exact filenames)
     setCertificates([
       "CS50x Puzzle Day 2025.pdf",
       "Mckinsey.pdf",

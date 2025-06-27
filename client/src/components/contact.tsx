@@ -48,7 +48,7 @@ export default function Contact() {
   const socialLinks = [
     {
       icon: FaLinkedin,
-      url: "https://linkedin.com/in/hanzlawatto",
+      url: "https://www.linkedin.com/in/hanzlawatto",
       color: "bg-blue-600 hover:bg-blue-700"
     },
     {
@@ -63,7 +63,7 @@ export default function Contact() {
     },
     {
       icon: FaTwitter,
-      url: "#",
+      url: "https://x.com/HanzlaWatto",
       color: "bg-blue-400 hover:bg-blue-500"
     }
   ];

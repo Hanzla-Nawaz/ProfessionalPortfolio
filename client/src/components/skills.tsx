@@ -24,8 +24,12 @@ const skillCategories = [
       { name: "TensorFlow", level: 90 },
       { name: "Scikit-learn", level: 95 },
       { name: "Hugging Face", level: 90 },
-      { name: "LangChain", level: 85 },
-      { name: "OpenAI GPT", level: 90 }
+      { name: "LangChain / RAG", level: 90 },
+      { name: "OpenAI GPT / LLMs", level: 90 },
+      { name: "LoRA / BitsAndBytes", level: 85 },
+      { name: "Whisper", level: 85 },
+      { name: "Vision Transformers (ViT)", level: 85 },
+      { name: "MLOps", level: 85 }
     ]
   },
   {
@@ -39,63 +43,66 @@ const skillCategories = [
       { name: "Flask", level: 85 },
       { name: "JavaScript", level: 80 },
       { name: "REST APIs", level: 90 },
-      { name: "GraphQL", level: 75 }
+      { name: "SQL / NoSQL", level: 85 },
+      { name: "HTML/CSS", level: 80 }
     ]
   },
   {
     id: 3,
-    title: "Cloud & DevOps",
+    title: "Cloud, Data & DevOps",
     icon: Cloud,
     color: "text-purple-600 dark:text-purple-400",
     skills: [
-      { name: "AWS", level: 85 },
-      { name: "GCP", level: 80 },
+      { name: "AWS / GCP", level: 85 },
       { name: "Docker", level: 90 },
+      { name: "CI/CD", level: 85 },
       { name: "MLflow", level: 85 },
-      { name: "CI/CD", level: 80 },
-      { name: "Kubernetes", level: 70 }
+      { name: "PostgreSQL / MS SQL", level: 90 },
+      { name: "Pinecone / Qdrant", level: 85 },
+      { name: "MongoDB", level: 80 }
     ]
   },
   {
     id: 4,
-    title: "Data & Analytics",
+    title: "Data Science & Analytics",
     icon: BarChart3,
     color: "text-orange-600 dark:text-orange-400",
     skills: [
-      { name: "PostgreSQL", level: 90 },
-      { name: "MongoDB", level: 85 },
       { name: "Pandas", level: 95 },
       { name: "NumPy", level: 95 },
       { name: "Plotly", level: 85 },
-      { name: "Vector DBs", level: 80 }
+      { name: "Data Visualization", level: 85 },
+      { name: "Feature Engineering", level: 85 }
     ]
   },
   {
     id: 5,
-    title: "Cybersecurity",
+    title: "Cybersecurity & Operations",
     icon: Shield,
     color: "text-red-600 dark:text-red-400",
     skills: [
-      { name: "ISO 27001", level: 90 },
+      { name: "ISO 27001 / 27017 / 27018", level: 90 },
       { name: "IEC 62443", level: 85 },
-      { name: "SIEM", level: 85 },
+      { name: "SIEM / SOC", level: 85 },
       { name: "Penetration Testing", level: 80 },
       { name: "Risk Assessment", level: 90 },
-      { name: "SOC Operations", level: 85 }
+      { name: "Incident Response", level: 85 },
+      { name: "Vulnerability Assessment", level: 85 }
     ]
   },
   {
     id: 6,
-    title: "Computer Vision",
-    icon: Cpu,
+    title: "Tools & Soft Skills",
+    icon: GitBranch,
     color: "text-indigo-600 dark:text-indigo-400",
     skills: [
-      { name: "Vision Transformers", level: 85 },
-      { name: "OpenCV", level: 90 },
-      { name: "YOLO", level: 80 },
-      { name: "Image Processing", level: 90 },
-      { name: "Object Detection", level: 85 },
-      { name: "OCR", level: 75 }
+      { name: "Git", level: 90 },
+      { name: "MLflow", level: 85 },
+      { name: "Gradio", level: 80 },
+      { name: "Metasploit / Nessus", level: 75 },
+      { name: "Leadership & Collaboration", level: 90 },
+      { name: "Problem Solving", level: 90 },
+      { name: "Technical Writing", level: 85 }
     ]
   }
 ];

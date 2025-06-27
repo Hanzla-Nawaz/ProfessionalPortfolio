@@ -3,10 +3,57 @@ import { Button } from "@/components/ui/button";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { smoothScrollTo, downloadResume } from "@/lib/utils";
 import { cn } from "@/lib/utils";
+import { FaLinkedin, FaGithub, FaKaggle, FaTwitter } from "react-icons/fa";
+import { useState, useEffect } from "react";
+
+const roles = [
+  "AI Engineer",
+  "Machine Learning Engineer", 
+  "Data Scientist",
+  "LLM Engineer",
+  "Generative AI Expert"
+];
 
 export default function Hero() {
   const { ref: leftRef, isVisible: leftVisible } = useScrollAnimation();
   const { ref: rightRef, isVisible: rightVisible } = useScrollAnimation();
+  const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
+  const [currentText, setCurrentText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    const typingSpeed = 100;
+    const deletingSpeed = 50;
+    const pauseTime = 2000;
+
+    const typeText = () => {
+      const currentRole = roles[currentRoleIndex];
+      
+      if (!isDeleting) {
+        if (currentText.length < currentRole.length) {
+          setTimeout(() => {
+            setCurrentText(currentRole.slice(0, currentText.length + 1));
+          }, typingSpeed);
+        } else {
+          setTimeout(() => {
+            setIsDeleting(true);
+          }, pauseTime);
+        }
+      } else {
+        if (currentText.length > 0) {
+          setTimeout(() => {
+            setCurrentText(currentText.slice(0, -1));
+          }, deletingSpeed);
+        } else {
+          setIsDeleting(false);
+          setCurrentRoleIndex((prev) => (prev + 1) % roles.length);
+        }
+      }
+    };
+
+    const timer = setTimeout(typeText, isDeleting ? deletingSpeed : typingSpeed);
+    return () => clearTimeout(timer);
+  }, [currentText, isDeleting, currentRoleIndex]);
 
   return (
     <section id="about" className="section-spacing pt-20 lg:pt-32">
@@ -22,15 +69,20 @@ export default function Hero() {
             <h1 className="text-4xl lg:text-6xl font-bold text-foreground mb-4">
               HANZLA <span className="gradient-text">NAWAZ</span>
             </h1>
-            <h2 className="text-xl lg:text-2xl font-semibold text-muted-foreground mb-6">
-              AI/ML Engineer | Machine Learning Engineer | Data Scientist
+            <h2 className="text-xl lg:text-2xl font-semibold text-muted-foreground mb-6 min-h-[2.5rem]">
+              {currentText}
+              <span className="animate-pulse">|</span>
             </h2>
             <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-              Results-driven AI/ML engineer with 2+ years of experience designing and deploying 
-              scalable machine learning products, LLM-based applications, and robust backend systems. 
-              Specialized in PyTorch, TensorFlow, and MLOps tools with expertise in modern AI 
-              frameworks and cybersecurity.
+              Results-driven AI Engineer with 2+ years of experience designing, developing, and deploying scalable machine learning products and LLM applications. Proficient in Python, FastAPI, and MLOps to accelerate product delivery. Effective technical leader skilled in cross-functional collaboration to transform business requirements into AI solutions. Specialized in PyTorch, TensorFlow, and modern AI frameworks with expertise in cybersecurity and computer vision.
             </p>
+            {/* Social Links Row */}
+            <div className="flex gap-4 mb-8">
+              <a href="https://www.linkedin.com/in/hanzlawatto" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 text-2xl" title="LinkedIn"><FaLinkedin /></a>
+              <a href="https://github.com/Hanzla-Nawaz" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white text-2xl" title="GitHub"><FaGithub /></a>
+              <a href="https://www.kaggle.com/hanzlanawaz" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-700 text-2xl" title="Kaggle"><FaKaggle /></a>
+              <a href="https://x.com/HanzlaWatto" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-600 text-2xl" title="X (Twitter)"><FaTwitter /></a>
+            </div>
             
             {/* Key Expertise Areas */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8 p-6 bg-muted/50 rounded-lg border">
@@ -77,9 +129,9 @@ export default function Hero() {
             )}
           >
             <img
-              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=800"
+              src="/images/profile.jpg"
               alt="Hanzla Nawaz - AI/ML Engineer"
-              className="w-48 h-48 lg:w-64 lg:h-64 rounded-full object-cover shadow-2xl"
+              className="w-48 h-48 lg:w-64 lg:h-64 rounded-full object-cover shadow-2xl border-4 border-background mx-auto"
             />
           </div>
         </div>
