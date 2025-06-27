@@ -129,7 +129,7 @@ export default function Hero() {
             )}
           >
             <img
-              src="/images/profile.jpg"
+              src="https://raw.githubusercontent.com/Hanzla-Nawaz/ProfessionalPortfolio/main/public/images/profile.jpg"
               alt="Hanzla Nawaz - AI/ML Engineer"
               className="w-48 h-48 lg:w-64 lg:h-64 rounded-full object-cover shadow-2xl border-4 border-background mx-auto"
             />
