@@ -1,43 +1,58 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { cn } from "@/lib/utils";
+import { useEffect, useState } from "react";
 
-const certificates = [
-  {
-    id: 1,
-    title: "IBM Data Science Professional",
-    date: "March 2023",
-    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=120",
-    verificationUrl: "#"
-  },
-  {
-    id: 2,
-    title: "Generative AI with LLMs",
-    date: "March 2024",
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=120",
-    verificationUrl: "#"
-  },
-  {
-    id: 3,
-    title: "McKinsey Forward Program",
-    date: "2024",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=120",
-    verificationUrl: "#"
-  },
-  {
-    id: 4,
-    title: "Cybersecurity Tools & Attacks",
-    date: "May 2022",
-    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=120",
-    verificationUrl: "#"
-  }
-];
+// Helper to clean up filenames for display
+function formatCertificateName(filename: string) {
+  return filename
+    .replace(/[-_]/g, " ")
+    .replace(/\.pdf$/i, "")
+    .replace(/\s+/g, " ")
+    .trim();
+}
 
 export default function Certificates() {
   const { ref: titleRef, isVisible: titleVisible } = useScrollAnimation();
+  const [certificates, setCertificates] = useState<string[]>([]);
+
+  useEffect(() => {
+    // List of all certificate PDFs in public/certificates
+    setCertificates([
+      "CS50x Puzzle Day 2025.pdf",
+      "Mckinsey.pdf",
+      "NASA Space Apps Challenge.pdf",
+      "R Programming- 2022-02-20.pdf",
+      "Python Gamma 01_1 - 2022-07-10.pdf",
+      "Cyber Security Essentials Revisit after - 2022-02-14.pdf",
+      "Machine Learning - Unsupervised - 2022-07-16.pdf",
+      "Probability for Emerging Pathways - 2022-07-16.pdf",
+      "Python (Primer , Alpha, Beta ) - 2022-01-29.pdf",
+      "Foundations of Artificial Intelligence - 2022-02-08.pdf",
+      "Certified Information System Security - 2022-02-11.pdf",
+      "ISO 27001, ISO 27017, ISO 27018 Lead - 2022-02-18.pdf",
+      "Linux Level 1 in Urdu - 2022-01-25.pdf",
+      "Machine Learning - Supervised Learning - 2022-07-14.pdf",
+      "RHEL Intensive - 2022-07-16.pdf",
+      "hanzla_nawaz_alp_2024_certificate_of_completion.pdf",
+      "1.Professional data Science.pdf",
+      "2.DataScienceProfessionalCertificateV2_Badge20230302-28-1q7ose2.pdf",
+      "Databases and SQL for Data Science with Python.pdf",
+      "Applied Data Science Capstone.pdf",
+      "Data Visualization.pdf",
+      "Data Analysis.pdf",
+      "Project data science.pdf",
+      "Python for datascience.pdf",
+      "Data Science Metodology.pdf",
+      "Tools For Data Science.pdf",
+      "Introduction to Deep Learning & Neural Networks.pdf",
+      "declaracio_titol_master_2022.pdf",
+      "Coursera Machine Learning.pdf",
+    ]);
+  }, []);
 
   return (
-    <section id="certificates" className="section-spacing bg-muted">
+    <section id="certificates" className="section-spacing bg-muted min-h-screen">
       <div className="container">
         <div
           ref={titleRef}
@@ -54,9 +69,9 @@ export default function Certificates() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {certificates.map((cert, index) => (
-            <CertificateCard key={cert.id} certificate={cert} index={index} />
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          {certificates.map((filename, index) => (
+            <CertificateCard key={filename} filename={filename} index={index} />
           ))}
         </div>
       </div>
@@ -64,30 +79,36 @@ export default function Certificates() {
   );
 }
 
-function CertificateCard({ certificate, index }: { certificate: any; index: number }) {
+function CertificateCard({ filename, index }: { filename: string; index: number }) {
   const { ref, isVisible } = useScrollAnimation();
+  const displayName = formatCertificateName(filename);
+  const fileUrl = `/certificates/${encodeURIComponent(filename)}`;
 
   return (
     <Card
       ref={ref}
       className={cn(
-        "text-center hover:shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer animate-on-scroll",
+        "flex flex-col items-center text-center hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer animate-on-scroll",
         isVisible && "animated"
       )}
-      onClick={() => window.open(certificate.verificationUrl, "_blank")}
     >
-      <CardContent className="p-6">
-        <img
-          src={certificate.image}
-          alt={certificate.title}
-          className="mx-auto mb-4 h-20 object-contain rounded"
-        />
-        <h3 className="text-lg font-semibold text-card-foreground mb-2">
-          {certificate.title}
+      <CardContent className="p-6 flex flex-col items-center">
+        <div className="w-16 h-16 mb-4 flex items-center justify-center bg-primary/10 rounded-full">
+          <svg width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="text-primary">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 7V3h10v4M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+          </svg>
+        </div>
+        <h3 className="text-lg font-semibold text-card-foreground mb-2 line-clamp-2">
+          {displayName}
         </h3>
-        <p className="text-sm text-muted-foreground">
-          {certificate.date}
-        </p>
+        <a
+          href={fileUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-2 inline-block px-4 py-2 bg-primary text-white rounded hover:bg-primary/80 transition"
+        >
+          View Certificate
+        </a>
       </CardContent>
     </Card>
   );

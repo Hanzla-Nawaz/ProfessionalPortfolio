@@ -4,6 +4,8 @@ import { Badge } from "@/components/ui/badge";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { cn } from "@/lib/utils";
 
+const MEDIUM_URL = "https://medium.com/@hanzlanawaz/";
+
 const blogPosts = [
   {
     id: 1,
@@ -54,6 +56,32 @@ export default function Blog() {
             Thoughts on AI, machine learning, and cybersecurity
           </p>
         </div>
+
+        {/* Medium Profile Card */}
+        <Card className="mb-8 border-2 border-primary bg-white/90 dark:bg-background/80 shadow-md flex flex-col md:flex-row items-center p-6 gap-6">
+          <div className="flex-shrink-0 flex items-center justify-center w-16 h-16 rounded-full bg-black">
+            {/* Medium Logo SVG */}
+            <svg viewBox="0 0 1043.63 592.71" width="36" height="36" fill="white" xmlns="http://www.w3.org/2000/svg">
+              <g>
+                <path d="M588.67 296.14c0 163.57-131.98 296.14-294.33 296.14C131.98 592.28 0 459.71 0 296.14 0 132.57 131.98 0 294.33 0c162.35 0 294.33 132.57 294.33 296.14z"/>
+                <ellipse cx="856.22" cy="296.14" rx="187.41" ry="285.56"/>
+                <path d="M1043.63 296.14c0 157.74-41.97 285.56-93.75 285.56-51.78 0-93.75-127.82-93.75-285.56 0-157.74 41.97-285.56 93.75-285.56 51.78 0 93.75 127.82 93.75 285.56z"/>
+              </g>
+            </svg>
+          </div>
+          <div className="flex-1">
+            <h3 className="text-xl font-bold mb-2">Read More on Medium</h3>
+            <p className="text-muted-foreground mb-3">See all my latest articles, tutorials, and insights on my Medium profile.</p>
+            <a
+              href={MEDIUM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-5 py-2 bg-primary text-white rounded hover:bg-primary/80 transition font-medium"
+            >
+              View My Medium Blog <ArrowRight className="inline ml-2 h-4 w-4" />
+            </a>
+          </div>
+        </Card>
 
         <div className="space-y-8">
           {blogPosts.map((post, index) => (
