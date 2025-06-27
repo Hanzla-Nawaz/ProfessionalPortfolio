@@ -82,7 +82,7 @@ export default function Certificates() {
 function CertificateCard({ filename, index }: { filename: string; index: number }) {
   const { ref, isVisible } = useScrollAnimation();
   const displayName = formatCertificateName(filename);
-  const fileUrl = `/certificates/${encodeURIComponent(filename)}`;
+  const fileUrl = `https://raw.githubusercontent.com/Hanzla-Nawaz/ProfessionalPortfolio/main/public/certificates/${encodeURIComponent(filename)}`;
 
   return (
     <Card
