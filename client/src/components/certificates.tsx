@@ -2,6 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { cn } from "@/lib/utils";
 import { useEffect, useState } from "react";
+import { Dialog } from "@/components/ui/dialog";
 
 // Helper to clean up filenames for display
 function formatCertificateName(filename: string) {
@@ -15,6 +16,7 @@ function formatCertificateName(filename: string) {
 export default function Certificates() {
   const { ref: titleRef, isVisible: titleVisible } = useScrollAnimation();
   const [certificates, setCertificates] = useState<string[]>([]);
+  const [openPdf, setOpenPdf] = useState<string | null>(null);
 
   useEffect(() => {
     // List of all certificate PDFs in public/certificates (exact filenames)
@@ -71,18 +73,18 @@ export default function Certificates() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {certificates.map((filename, index) => (
-            <CertificateCard key={filename} filename={filename} index={index} />
+            <CertificateCard key={filename} filename={filename} index={index} onView={() => setOpenPdf(filename)} />
           ))}
         </div>
+        <PdfModal openPdf={openPdf} onClose={() => setOpenPdf(null)} />
       </div>
     </section>
   );
 }
 
-function CertificateCard({ filename, index }: { filename: string; index: number }) {
+function CertificateCard({ filename, index, onView }: { filename: string; index: number; onView: () => void }) {
   const { ref, isVisible } = useScrollAnimation();
   const displayName = formatCertificateName(filename);
-  const fileUrl = `https://raw.githubusercontent.com/Hanzla-Nawaz/ProfessionalPortfolio/main/public/certificates/${encodeURIComponent(filename)}`;
 
   return (
     <Card
@@ -101,15 +103,34 @@ function CertificateCard({ filename, index }: { filename: string; index: number 
         <h3 className="text-lg font-semibold text-card-foreground mb-2 line-clamp-2">
           {displayName}
         </h3>
-        <a
-          href={fileUrl}
-          target="_blank"
-          rel="noopener noreferrer"
+        <button
+          onClick={onView}
           className="mt-2 inline-block px-4 py-2 bg-primary text-white rounded hover:bg-primary/80 transition"
         >
           View Certificate
-        </a>
+        </button>
       </CardContent>
     </Card>
+  );
+}
+
+function PdfModal({ openPdf, onClose }: { openPdf: string | null; onClose: () => void }) {
+  if (!openPdf) return null;
+  const fileUrl = `https://raw.githubusercontent.com/Hanzla-Nawaz/ProfessionalPortfolio/main/public/certificates/${encodeURIComponent(openPdf)}`;
+  return (
+    <Dialog open={!!openPdf} onOpenChange={onClose}>
+      <div className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center">
+        <div className="bg-white rounded-lg shadow-lg max-w-3xl w-full p-4 relative">
+          <button onClick={onClose} className="absolute top-2 right-2 text-lg font-bold text-gray-600 hover:text-primary">&times;</button>
+          <iframe
+            src={fileUrl}
+            width="100%"
+            height="600px"
+            style={{ border: "none" }}
+            title="Certificate PDF"
+          />
+        </div>
+      </div>
+    </Dialog>
   );
 }
