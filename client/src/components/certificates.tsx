@@ -116,7 +116,7 @@ function CertificateCard({ filename, index, onView }: { filename: string; index:
 
 function PdfModal({ openPdf, onClose }: { openPdf: string | null; onClose: () => void }) {
   if (!openPdf) return null;
-  const fileUrl = `https://raw.githubusercontent.com/Hanzla-Nawaz/ProfessionalPortfolio/main/public/certificates/${encodeURIComponent(openPdf)}`;
+  const fileUrl = `/certificates/${encodeURIComponent(openPdf)}`;
   return (
     <Dialog open={!!openPdf} onOpenChange={onClose}>
       <div className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center">
