@@ -9,6 +9,91 @@ import { cn } from "@/lib/utils";
 
 const projects = [
   {
+    id: 101,
+    title: "TaskMaker AI",
+    description: "Multi-agent workflow assistant using LangGraph, OpenAI/Gemini LLMs, and Gradio. Features automatic success criteria evaluation and feedback loops.",
+    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=450",
+    demoUrl: "https://huggingface.co/spaces/NawazHanzla/taskmaker.ai",
+    githubUrl: "https://github.com/Hanzla-Nawaz/GenEval", // If you want to link to code, otherwise leave blank
+    docsUrl: "https://huggingface.co/spaces/NawazHanzla/taskmaker.ai",
+    interactive: false,
+    technologies: ["Python", "LangChain", "LangGraph", "OpenAI API", "Google Gemini", "Gradio", "Pydantic", "AsyncIO"],
+    impact: "Automated task completion with self-evaluating multi-agent workflow"
+  },
+  {
+    id: 102,
+    title: "NutriVision AI",
+    description: "AI-powered food recognition and nutrition analysis app using Vision Transformers and external nutrition APIs.",
+    image: "https://images.unsplash.com/photo-1498837167922-ddd27525d352?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=450",
+    demoUrl: "https://huggingface.co/spaces/NawazHanzla/NutriVision-AI",
+    githubUrl: "",
+    docsUrl: "https://huggingface.co/spaces/NawazHanzla/NutriVision-AI",
+    interactive: true,
+    demoType: "image",
+    technologies: ["Python", "Hugging Face Transformers", "ViT", "Gradio", "API Integration", "PIL"],
+    impact: "Real-time nutrition analysis with Vision Transformer technology"
+  },
+  {
+    id: 103,
+    title: "Android Apps and Reviews",
+    description: "Data analysis and visualization of Google Play Store apps and user reviews using Python and Jupyter Notebook.",
+    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=450",
+    demoUrl: "https://github.com/Hanzla-Nawaz/Android_apps_and_Reviews",
+    githubUrl: "https://github.com/Hanzla-Nawaz/Android_apps_and_Reviews",
+    docsUrl: "https://github.com/Hanzla-Nawaz/Android_apps_and_Reviews/blob/main/README.md",
+    interactive: false,
+    technologies: ["Python", "Pandas", "Jupyter Notebook", "Data Visualization"],
+    impact: "Insights into Google Play Store apps and user reviews"
+  },
+  {
+    id: 104,
+    title: "Llama3 Hackathon",
+    description: "Participated in a hackathon leveraging Meta’s Llama 3 LLM for innovative AI solutions.",
+    image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=450",
+    demoUrl: "https://github.com/Hanzla-Nawaz/Llama3hackathon",
+    githubUrl: "https://github.com/Hanzla-Nawaz/Llama3hackathon",
+    docsUrl: "https://github.com/Hanzla-Nawaz/Llama3hackathon/blob/main/README.md",
+    interactive: false,
+    technologies: ["Llama 3", "Large Language Models", "Python", "Prompt Engineering"],
+    impact: "Innovative AI solutions using Meta’s Llama 3 LLM"
+  },
+  {
+    id: 105,
+    title: "Misinformation Detector",
+    description: "Built a Python-based tool to detect and analyze misinformation using NLP techniques.",
+    image: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=450",
+    demoUrl: "https://github.com/Hanzla-Nawaz/Misinformation-Detector",
+    githubUrl: "https://github.com/Hanzla-Nawaz/Misinformation-Detector",
+    docsUrl: "https://github.com/Hanzla-Nawaz/Misinformation-Detector/blob/main/README.md",
+    interactive: false,
+    technologies: ["Python", "NLP", "Machine Learning"],
+    impact: "Detecting and analyzing misinformation using NLP"
+  },
+  {
+    id: 106,
+    title: "Inventory Management System",
+    description: "Developed a GUI-based inventory management system using Tkinter and SQLite.",
+    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=450",
+    demoUrl: "https://github.com/Hanzla-Nawaz/Inventory_Management_Project",
+    githubUrl: "https://github.com/Hanzla-Nawaz/Inventory_Management_Project",
+    docsUrl: "https://github.com/Hanzla-Nawaz/Inventory_Management_Project/blob/main/README.md",
+    interactive: false,
+    technologies: ["Python", "Tkinter", "SQLite", "GUI"],
+    impact: "Efficient inventory management with a user-friendly interface"
+  },
+  {
+    id: 107,
+    title: "GenEval",
+    description: "Evaluation framework for generative AI models. (Add more details if available)",
+    image: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=450",
+    demoUrl: "https://github.com/Hanzla-Nawaz/GenEval",
+    githubUrl: "https://github.com/Hanzla-Nawaz/GenEval",
+    docsUrl: "https://github.com/Hanzla-Nawaz/GenEval/blob/main/README.md",
+    interactive: false,
+    technologies: ["Python", "Evaluation", "Generative AI"],
+    impact: "Framework for evaluating generative AI models"
+  },
+  {
     id: 1,
     title: "Data Science Assistant Toolkit (DSATK)",
     description: "Comprehensive Streamlit application for automated data science workflows including EDA, feature engineering, and model deployment with 50% pipeline time reduction.",
