@@ -61,21 +61,9 @@ const projects = [
     impact: "Dermatology AI achieving 92.3% accuracy in melanoma detection using advanced computer vision techniques"
   },
 
-  
+
   {
-    id: 7,
-    title: "Advanced ML-Powered SOC Operations",
-    description: "Machine learning-enhanced Security Operations Center solution using anomaly detection and threat intelligence. Implemented real-time monitoring with 95% threat detection accuracy and automated incident response workflows.",
-    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=450",
-    demoUrl: "https://github.com/Hanzla-Nawaz/ML-SOC",
-    githubUrl: "https://github.com/Hanzla-Nawaz/ML-SOC",
-    docsUrl: "https://github.com/Hanzla-Nawaz/ML-SOC/blob/main/README.md",
-    interactive: false,
-    technologies: ["Python", "Anomaly Detection", "Threat Intelligence", "SIEM Integration", "MLOps"],
-    impact: "ML-enhanced SOC operations achieving 95% threat detection accuracy with automated response"
-  },
-  {
-    id: 8,
+    id: 5,
     title: "Inventory Management System",
     description: "Full-stack inventory management solution with real-time tracking, automated reordering, and analytics dashboard. Features include barcode scanning, supplier management, and predictive inventory optimization using ML.",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=450",
@@ -87,7 +75,7 @@ const projects = [
     impact: "Comprehensive inventory management with ML-powered optimization and real-time tracking"
   },
   {
-    id: 9,
+    id: 6,
     title: "Misinformation Detection System",
     description: "AI-powered misinformation detection platform using NLP and deep learning to identify fake news and misleading content. Achieved 91% accuracy in detecting misinformation across multiple languages and content types.",
     image: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=450",
@@ -100,7 +88,7 @@ const projects = [
     impact: "AI misinformation detection achieving 91% accuracy across multiple languages and content types"
   },
   {
-    id: 10,
+    id: 7,
     title: "SpaceX Launch Data Analysis & Prediction",
     description: "Comprehensive analysis of Falcon 9 launches with Random Forest and XGBoost models achieving 83% accuracy in predicting landing success with interactive dashboard.",
     image: "https://images.unsplash.com/photo-1446776877081-d282a0f896e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=450",
@@ -112,7 +100,7 @@ const projects = [
     impact: "Comprehensive analysis with ML models achieving high prediction accuracy"
   },
   {
-    id: 11,
+    id: 8,
     title: "IoT Medical Security System",
     description: "Privacy-preserving healthcare IoT security solution using federated learning across 5 client sites with hybrid Transformer-CNN model achieving 92% accuracy.",
     image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=450",
@@ -124,7 +112,7 @@ const projects = [
     impact: "Privacy-preserving security solution with advanced ML techniques"
   },
   {
-    id: 12,
+    id: 9,
     title: "Automated Meeting Minutes Generator",
     description: "End-to-end meeting transcription and summarization using Whisper v3 and Mistral 7B with 4-bit quantization, reducing manual note-taking by 65%.",
     image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=450",
