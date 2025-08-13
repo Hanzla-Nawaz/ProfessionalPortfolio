@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { cn } from "@/lib/utils";
 
-const publications = [
+const publications: any[] = [
   // Note: This section can be updated when you have published research papers
   // For now, we'll focus on your project contributions and professional work
 ];
@@ -13,24 +13,48 @@ const publications = [
 const achievements = [
   {
     id: 1,
-    title: "NASA Space Apps Challenge 2024",
-    type: "Hackathon Winner",
-    description: "Developed innovative space data analysis solution recognized for technical excellence and practical applicability.",
-    badge: "Winner"
+    title: "Meta Hacker Cup 2024",
+    type: "Programming Competition",
+    description: "Advanced to regional finals in Meta's prestigious programming competition, demonstrating exceptional algorithmic problem-solving skills and competitive programming expertise.",
+    badge: "Finalist",
+    url: "https://web.facebook.com/codingcompetitions/hacker-cup/2024/certificate/281902774663610?_rdc=1&_rdr#"
   },
   {
     id: 2,
-    title: "Meta Hacker Cup 2024",
-    type: "Programming Competition",
-    description: "Advanced to regional finals demonstrating strong algorithmic problem-solving skills.",
-    badge: "Finalist"
+    title: "NASA Space Apps Challenge 2024",
+    type: "Hackathon Winner",
+    description: "Developed innovative space data analysis solution recognized for technical excellence and practical applicability in space exploration and data science.",
+    badge: "Winner"
   },
   {
     id: 3,
+    title: "Generative AI with Large Language Models",
+    type: "Coursera Certification",
+    description: "Completed advanced course on Generative AI and LLMs from DeepLearning.AI & AWS, covering practical implementation and business applications.",
+    badge: "Certified",
+    url: "https://www.coursera.org/account/accomplishments/verify/MLQEY9CWN836"
+  },
+  {
+    id: 4,
+    title: "Generative AI for Everyone",
+    type: "Coursera Certification",
+    description: "Completed comprehensive course on Generative AI fundamentals, prompt engineering, and AI project lifecycle management from DeepLearning.AI.",
+    badge: "Certified",
+    url: "https://www.coursera.org/account/accomplishments/verify/QVCUBZUBKGPY"
+  },
+  {
+    id: 5,
     title: "Omdena AI for Good Projects",
     type: "Global Collaboration",
-    description: "Led successful AI initiatives addressing real-world challenges in healthcare and misinformation detection.",
+    description: "Led successful AI initiatives addressing real-world challenges in healthcare and misinformation detection, collaborating with international teams.",
     badge: "Lead Contributor"
+  },
+  {
+    id: 6,
+    title: "Advanced Cybersecurity Certifications",
+    type: "Professional Development",
+    description: "Completed multiple advanced cybersecurity certifications including ethical hacking, incident response, and security frameworks implementation.",
+    badge: "Certified"
   }
 ];
 
@@ -41,7 +65,7 @@ export default function Publications() {
     <section id="publications" className="section-spacing">
       <div className="container">
         <div
-          ref={titleRef}
+          ref={titleRef as React.RefObject<HTMLDivElement>}
           className={cn(
             "text-center mb-12 animate-on-scroll",
             titleVisible && "animated"
@@ -86,7 +110,7 @@ function PublicationCard({ publication, index }: { publication: any; index: numb
 
   return (
     <Card
-      ref={ref}
+      ref={ref as React.RefObject<HTMLDivElement>}
       className={cn(
         "hover:shadow-lg transition-all duration-300 animate-on-scroll",
         isVisible && "animated"
@@ -153,7 +177,7 @@ function AchievementCard({ achievement, index }: { achievement: any; index: numb
 
   return (
     <Card
-      ref={ref}
+      ref={ref as React.RefObject<HTMLDivElement>}
       className={cn(
         "text-center hover:shadow-lg hover:scale-105 transition-all duration-300 animate-on-scroll",
         isVisible && "animated"
@@ -170,9 +194,21 @@ function AchievementCard({ achievement, index }: { achievement: any; index: numb
         <p className="text-sm text-muted-foreground mb-3">
           {achievement.type}
         </p>
-        <p className="text-xs text-muted-foreground leading-relaxed">
+        <p className="text-xs text-muted-foreground leading-relaxed mb-4">
           {achievement.description}
         </p>
+        
+        {achievement.url && (
+          <Button
+            variant="outline"
+            size="sm"
+            className="w-full"
+            onClick={() => window.open(achievement.url, "_blank")}
+          >
+            <ExternalLink className="mr-2 h-3 w-3" />
+            Verify
+          </Button>
+        )}
       </CardContent>
     </Card>
   );

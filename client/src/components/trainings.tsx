@@ -63,16 +63,30 @@ const trainings: TrainingItem[] = [
     category: "ml",
     icon: <Brain className="w-6 h-6" />
   },
+  {
+    id: 9,
+    title: "Generative AI with Large Language Models",
+    category: "ml",
+    icon: <Brain className="w-6 h-6" />,
+    status: "Coursera Certified"
+  },
+  {
+    id: 10,
+    title: "Generative AI for Everyone",
+    category: "ml",
+    icon: <Brain className="w-6 h-6" />,
+    status: "Coursera Certified"
+  },
   
   // Programming & Development
   {
-    id: 9,
+    id: 11,
     title: "Programming in Python",
     category: "programming",
     icon: <Code className="w-6 h-6" />
   },
   {
-    id: 10,
+    id: 12,
     title: "Programming in R",
     category: "programming",
     icon: <Code className="w-6 h-6" />
@@ -80,19 +94,19 @@ const trainings: TrainingItem[] = [
   
   // Data & Infrastructure
   {
-    id: 11,
+    id: 13,
     title: "Linux RHEL Intensive Boot Camp",
     category: "data",
     icon: <Server className="w-6 h-6" />
   },
   {
-    id: 12,
+    id: 14,
     title: "Data Collection & Data Wrangling",
     category: "data",
     icon: <Database className="w-6 h-6" />
   },
   {
-    id: 13,
+    id: 15,
     title: "Exploratory Data Analysis",
     category: "data",
     icon: <Database className="w-6 h-6" />
@@ -120,7 +134,7 @@ export default function Trainings() {
     <section id="trainings" className="section-spacing bg-background">
       <div className="container">
         <div
-          ref={titleRef}
+          ref={titleRef as React.RefObject<HTMLDivElement>}
           className={cn(
             "text-center mb-12 animate-on-scroll",
             titleVisible && "animated"
@@ -149,7 +163,7 @@ function TrainingCard({ training, index }: { training: TrainingItem; index: numb
 
   return (
     <div
-      ref={ref}
+      ref={ref as React.RefObject<HTMLDivElement>}
       className={cn(
         "animate-on-scroll",
         isVisible && "animated"
