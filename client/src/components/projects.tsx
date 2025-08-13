@@ -9,104 +9,59 @@ import { cn } from "@/lib/utils";
 
 const projects = [
   {
-    id: 101,
-    title: "TaskMaker AI",
-    description: "Multi-agent workflow assistant using LangGraph, OpenAI/Gemini LLMs, and Gradio. Features automatic success criteria evaluation and feedback loops.",
-    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=450",
-    demoUrl: "https://huggingface.co/spaces/NawazHanzla/taskmaker.ai",
-    githubUrl: "https://github.com/Hanzla-Nawaz/GenEval", // If you want to link to code, otherwise leave blank
-    docsUrl: "https://huggingface.co/spaces/NawazHanzla/taskmaker.ai",
-    interactive: false,
-    technologies: ["Python", "LangChain", "LangGraph", "OpenAI API", "Google Gemini", "Gradio", "Pydantic", "AsyncIO"],
-    impact: "Automated task completion with self-evaluating multi-agent workflow"
-  },
-  {
-    id: 102,
-    title: "NutriVision AI",
-    description: "AI-powered food recognition and nutrition analysis app using Vision Transformers and external nutrition APIs.",
-    image: "https://images.unsplash.com/photo-1498837167922-ddd27525d352?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=450",
-    demoUrl: "https://huggingface.co/spaces/NawazHanzla/NutriVision-AI",
-    githubUrl: "",
-    docsUrl: "https://huggingface.co/spaces/NawazHanzla/NutriVision-AI",
-    interactive: true,
-    demoType: "image",
-    technologies: ["Python", "Hugging Face Transformers", "ViT", "Gradio", "API Integration", "PIL"],
-    impact: "Real-time nutrition analysis with Vision Transformer technology"
-  },
-  {
-    id: 103,
-    title: "Android Apps and Reviews",
-    description: "Data analysis and visualization of Google Play Store apps and user reviews using Python and Jupyter Notebook.",
-    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=450",
-    demoUrl: "https://github.com/Hanzla-Nawaz/Android_apps_and_Reviews",
-    githubUrl: "https://github.com/Hanzla-Nawaz/Android_apps_and_Reviews",
-    docsUrl: "https://github.com/Hanzla-Nawaz/Android_apps_and_Reviews/blob/main/README.md",
-    interactive: false,
-    technologies: ["Python", "Pandas", "Jupyter Notebook", "Data Visualization"],
-    impact: "Insights into Google Play Store apps and user reviews"
-  },
-  {
-    id: 104,
-    title: "Llama3 Hackathon",
-    description: "Participated in a hackathon leveraging Meta’s Llama 3 LLM for innovative AI solutions.",
-    image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=450",
-    demoUrl: "https://github.com/Hanzla-Nawaz/Llama3hackathon",
-    githubUrl: "https://github.com/Hanzla-Nawaz/Llama3hackathon",
-    docsUrl: "https://github.com/Hanzla-Nawaz/Llama3hackathon/blob/main/README.md",
-    interactive: false,
-    technologies: ["Llama 3", "Large Language Models", "Python", "Prompt Engineering"],
-    impact: "Innovative AI solutions using Meta’s Llama 3 LLM"
-  },
-  {
-    id: 105,
-    title: "Misinformation Detector",
-    description: "Built a Python-based tool to detect and analyze misinformation using NLP techniques.",
-    image: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=450",
-    demoUrl: "https://github.com/Hanzla-Nawaz/Misinformation-Detector",
-    githubUrl: "https://github.com/Hanzla-Nawaz/Misinformation-Detector",
-    docsUrl: "https://github.com/Hanzla-Nawaz/Misinformation-Detector/blob/main/README.md",
-    interactive: false,
-    technologies: ["Python", "NLP", "Machine Learning"],
-    impact: "Detecting and analyzing misinformation using NLP"
-  },
-  {
-    id: 106,
-    title: "Inventory Management System",
-    description: "Developed a GUI-based inventory management system using Tkinter and SQLite.",
-    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=450",
-    demoUrl: "https://github.com/Hanzla-Nawaz/Inventory_Management_Project",
-    githubUrl: "https://github.com/Hanzla-Nawaz/Inventory_Management_Project",
-    docsUrl: "https://github.com/Hanzla-Nawaz/Inventory_Management_Project/blob/main/README.md",
-    interactive: false,
-    technologies: ["Python", "Tkinter", "SQLite", "GUI"],
-    impact: "Efficient inventory management with a user-friendly interface"
-  },
-  {
-    id: 107,
-    title: "GenEval",
-    description: "Evaluation framework for generative AI models. (Add more details if available)",
-    image: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=450",
-    demoUrl: "https://github.com/Hanzla-Nawaz/GenEval",
-    githubUrl: "https://github.com/Hanzla-Nawaz/GenEval",
-    docsUrl: "https://github.com/Hanzla-Nawaz/GenEval/blob/main/README.md",
-    interactive: false,
-    technologies: ["Python", "Evaluation", "Generative AI"],
-    impact: "Framework for evaluating generative AI models"
-  },
-  {
     id: 1,
-    title: "Data Science Assistant Toolkit (DSATK)",
-    description: "Comprehensive Streamlit application for automated data science workflows including EDA, feature engineering, and model deployment with 50% pipeline time reduction.",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=450",
-    demoUrl: "https://github.com/Hanzla-Nawaz/DSATK",
-    githubUrl: "https://github.com/Hanzla-Nawaz/DSATK",
-    docsUrl: "https://github.com/Hanzla-Nawaz/DSATK/blob/main/README.md",
-    interactive: false,
-    technologies: ["Python", "Streamlit", "Scikit-learn", "Pandas", "MLflow"],
-    impact: "Automated data science workflows with comprehensive EDA and model deployment"
+    title: "Diabetes Prediction — BRFSS 2015 Health Indicators",
+    description: "Advanced healthcare ML project predicting diabetes using 253K+ health records with Neural Networks, XGBoost, and ensemble methods. Achieved 87.4% accuracy using 22 health indicators including BMI, blood pressure, and lifestyle factors.",
+    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=450",
+    demoUrl: "https://www.kaggle.com/code/hanzlanawaz/diabetes-health-prediction-using-anns",
+    githubUrl: "https://www.kaggle.com/code/hanzlanawaz/diabetes-health-prediction-using-anns",
+    docsUrl: "https://www.kaggle.com/code/hanzlanawaz/diabetes-health-prediction-using-anns",
+    interactive: true,
+    demoType: "kaggle",
+    technologies: ["Python", "Keras", "XGBoost", "Scikit-learn", "Pandas", "Neural Networks", "Healthcare ML"],
+    impact: "Healthcare ML solution with 87.4% diabetes prediction accuracy using 253K+ health records"
   },
   {
     id: 2,
+    title: "Lung X-Ray Classification — EfficientNetB4",
+    description: "Computer vision breakthrough in medical imaging using transfer learning with EfficientNetB4. Achieved 94.1% accuracy classifying chest X-rays into Normal, Viral Pneumonia, and Lung Opacity with advanced preprocessing and data augmentation.",
+    image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=450",
+    demoUrl: "https://www.kaggle.com/code/hanzlanawaz/lung-disease-efficientnetb4-accuracy-94",
+    githubUrl: "https://www.kaggle.com/code/hanzlanawaz/lung-disease-efficientnetb4-accuracy-94",
+    docsUrl: "https://www.kaggle.com/code/hanzlanawaz/lung-disease-efficientnetb4-accuracy-94",
+    interactive: true,
+    demoType: "kaggle",
+    technologies: ["TensorFlow", "EfficientNetB4", "Computer Vision", "Medical Imaging", "CLAHE", "Transfer Learning"],
+    impact: "Medical imaging AI achieving 94.1% accuracy in lung disease classification using advanced CV techniques"
+  },
+  {
+    id: 3,
+    title: "Breast Cancer Classification — Wisconsin Diagnostic Dataset",
+    description: "Medical diagnostics breakthrough using machine learning to classify breast tumors as malignant or benign. Achieved 99.12% accuracy with SVM and XGBoost models using 30 diagnostic features from the Wisconsin dataset.",
+    image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=450",
+    demoUrl: "https://www.kaggle.com/code/hanzlanawaz/99-breast-cancer-prediction-using-xgboost",
+    githubUrl: "https://www.kaggle.com/code/hanzlanawaz/99-breast-cancer-prediction-using-xgboost",
+    docsUrl: "https://www.kaggle.com/code/hanzlanawaz/99-breast-cancer-prediction-using-xgboost",
+    interactive: true,
+    demoType: "kaggle",
+    technologies: ["Python", "SVM", "XGBoost", "Random Forest", "Decision Trees", "Scikit-learn", "Medical Diagnostics"],
+    impact: "Medical diagnostics AI achieving 99.12% accuracy in breast cancer classification using ensemble ML methods"
+  },
+  {
+    id: 4,
+    title: "Melanoma Cancer Prediction — Dermoscopic Image Classification",
+    description: "Computer vision breakthrough in dermatology using EfficientNetB0 for skin lesion classification. Achieved 92.3% accuracy in detecting malignant vs benign melanoma from dermoscopic images with advanced data augmentation and transfer learning.",
+    image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=450",
+    demoUrl: "https://colab.research.google.com/drive/1RvmyZhmD-hT9NpZ8u8bEoyWp28yl0iR0?usp=sharing",
+    githubUrl: "https://colab.research.google.com/drive/1RvmyZhmD-hT9NpZ8u8bEoyWp28yl0iR0?usp=sharing",
+    docsUrl: "https://colab.research.google.com/drive/1RvmyZhmD-hT9NpZ8u8bEoyWp28yl0iR0?usp=sharing",
+    interactive: true,
+    demoType: "colab",
+    technologies: ["TensorFlow", "EfficientNetB0", "Computer Vision", "Medical Imaging", "Transfer Learning", "Data Augmentation"],
+    impact: "Dermatology AI achieving 92.3% accuracy in melanoma detection using advanced computer vision techniques"
+  },
+  {
+    id: 5,
     title: "SpaceX Launch Data Analysis & Prediction",
     description: "Comprehensive analysis of Falcon 9 launches with Random Forest and XGBoost models achieving 83% accuracy in predicting landing success with interactive dashboard.",
     image: "https://images.unsplash.com/photo-1446776877081-d282a0f896e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=450",
@@ -118,7 +73,7 @@ const projects = [
     impact: "Comprehensive analysis with ML models achieving high prediction accuracy"
   },
   {
-    id: 3,
+    id: 6,
     title: "IoT Medical Security System",
     description: "Privacy-preserving healthcare IoT security solution using federated learning across 5 client sites with hybrid Transformer-CNN model achieving 92% accuracy.",
     image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=450",
@@ -130,24 +85,11 @@ const projects = [
     impact: "Privacy-preserving security solution with advanced ML techniques"
   },
   {
-    id: 4,
-    title: "NutriVision: AI Nutrition Analyzer",
-    description: "Vision Transformer-based nutrition analysis system with 89% ingredient classification accuracy and real-time nutritional breakdowns via Gradio interface.",
-    image: "https://images.unsplash.com/photo-1498837167922-ddd27525d352?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=450",
-    demoUrl: "#",
-    githubUrl: "#",
-    docsUrl: "#",
-    interactive: true,
-    demoType: "image",
-    technologies: ["Vision Transformers", "Gradio", "REST APIs", "Computer Vision"],
-    impact: "Real-time nutrition analysis with Vision Transformer technology"
-  },
-  {
-    id: 5,
+    id: 7,
     title: "Automated Meeting Minutes Generator",
     description: "End-to-end meeting transcription and summarization using Whisper v3 and Mistral 7B with 4-bit quantization, reducing manual note-taking by 65%.",
     image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=450",
-    demoUrl: "#",
+    demoUrl: "https://medium.com/@hanzlanawaz/meeting-minutes-reimagined-automating-documentation-with-whisper-mistral-and-open-source-ai-5201910367af",
     githubUrl: "#",
     docsUrl: "#",
     interactive: true,
@@ -155,18 +97,6 @@ const projects = [
     technologies: ["Whisper v3", "Mistral 7B", "4-bit Quantization", "NLP"],
     impact: "Automated meeting transcription and summarization using state-of-the-art models"
   },
-  {
-    id: 6,
-    title: "Advanced ML-Powered SOC Operations",
-    description: "Custom SIEM integration with Transformer-CNN anomaly detection models reducing false positives by 20% for 24/7 security monitoring.",
-    image: "https://images.unsplash.com/photo-1563206767-5b18f218e8de?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=450",
-    demoUrl: "#",
-    githubUrl: "#",
-    docsUrl: "#",
-    interactive: false,
-    technologies: ["Wazuh", "Security Onion", "Python Analytics", "Transformer-CNN"],
-    impact: "Enhanced security monitoring with ML-powered anomaly detection"
-  }
 ];
 
 export default function Projects() {

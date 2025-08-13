@@ -4,10 +4,10 @@ import Skills from "@/components/skills";
 import Experience from "@/components/experience";
 import Education from "@/components/education";
 import Projects from "@/components/projects";
-import Publications from "@/components/publications";
 import Certificates from "@/components/certificates";
+import Trainings from "@/components/trainings";
+import Publications from "@/components/publications";
 import Volunteer from "@/components/volunteer";
-import Blog from "@/components/blog";
 import Contact from "@/components/contact";
 import Footer from "@/components/footer";
 import BackToTop from "@/components/back-to-top";
@@ -22,10 +22,10 @@ export default function Home() {
         <Experience />
         <Education />
         <Projects />
-        <Publications />
         <Certificates />
+        <Trainings />
+        <Publications />
         <Volunteer />
-        <Blog />
         <Contact />
       </main>
       <Footer />

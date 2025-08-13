@@ -13,18 +13,18 @@ interface ExperienceItem {
 const experiences: ExperienceItem[] = [
   {
     id: 1,
-    period: "April 2025 - Present",
-    title: "AI Engineer",
-    company: "Xeven Solutions | Lahore, Pakistan",
-    description: "Building LLM-powered applications using OpenAI APIs, implementing RAG pipelines with 30% accuracy improvement, and achieving 99.8% system uptime.",
+    period: "Jul 2024 - Present",
+    title: "Associate Machine Learning Engineer",
+    company: "XEVEN SOLUTIONS (Pvt) Ltd. | Lahore, Pakistan",
+    description: "• Built LLM-powered production services with FastAPI, OpenAI & open-source models; implemented RAG, embeddings, and vector search for domain retrieval.\n• Designed PostgreSQL and MS SQL schemas for logging, bot history, and audit; improved observability and reduced query latencies.\n• Optimized inference pipelines (QLoRA/LoRA) to reduce serving costs and improve throughput for healthcare NLP tasks.\n• Worked with product and DevOps to containerize services (Docker) and prepare Kubernetes manifests for scale.",
     side: "left"
   },
   {
     id: 2,
-    period: "Nov 2023 - Oct 2024",
+    period: "Nov 2023 - May 2024",
     title: "Machine Learning Engineer",
     company: "Omdena | Remote",
-    description: "Automated TB case data preprocessing (50% effort reduction), developed predictive models with 15% accuracy improvement for public health interventions.",
+    description: "• Automated ETL and preprocessing for TB case forecasting; reduced manual cleaning time by ~50% and improved forecast accuracy by ~15%.\n• Built regression and classification models using scikit-learn and XGBoost; validated solutions with cross-validation and robust metrics.\n• Led efforts to detect misinformation using AI tools and embeddings, collaborating with international teams on ethical data handling.",
     side: "right"
   },
   {
@@ -32,7 +32,7 @@ const experiences: ExperienceItem[] = [
     period: "Jan 2021 - Aug 2022",
     title: "Cybersecurity Analyst",
     company: "Ghanimah Labs | Lahore, Pakistan",
-    description: "Led ISO 27001 implementations, designed secure OT/IT architectures, and reduced vulnerabilities by 40% through comprehensive risk assessments.",
+    description: "Led ISO 27001 implementations, designed secure OT/IT architectures, and reduced vulnerabilities by 40% through comprehensive risk assessments. Implemented security frameworks and conducted penetration testing for enterprise clients.",
     side: "left"
   }
 ];
@@ -44,7 +44,7 @@ export default function Experience() {
     <section id="experience" className="section-spacing bg-muted">
       <div className="container">
         <div
-          ref={titleRef}
+          ref={titleRef as React.RefObject<HTMLDivElement>}
           className={cn(
             "text-center mb-12 animate-on-scroll",
             titleVisible && "animated"
@@ -77,7 +77,7 @@ function TimelineItem({ experience, index }: { experience: ExperienceItem; index
 
   return (
     <div
-      ref={ref}
+      ref={ref as React.RefObject<HTMLDivElement>}
       className={cn(
         "relative animate-on-scroll",
         isVisible && "animated"
@@ -103,9 +103,9 @@ function TimelineItem({ experience, index }: { experience: ExperienceItem; index
             <p className="text-muted-foreground mb-3">
               {experience.company}
             </p>
-            <p className="text-sm text-muted-foreground">
+            <div className="text-sm text-muted-foreground whitespace-pre-line">
               {experience.description}
-            </p>
+            </div>
           </div>
         </div>
       </div>

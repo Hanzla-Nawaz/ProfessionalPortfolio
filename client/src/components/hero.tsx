@@ -74,7 +74,7 @@ export default function Hero() {
               <span className="animate-pulse">|</span>
             </h2>
             <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-              Results-driven AI Engineer with 2+ years of experience designing, developing, and deploying scalable machine learning products and LLM applications. Proficient in Python, FastAPI, and MLOps to accelerate product delivery. Effective technical leader skilled in cross-functional collaboration to transform business requirements into AI solutions. Specialized in PyTorch, TensorFlow, and modern AI frameworks with expertise in cybersecurity and computer vision.
+              Backend + ML Engineer with ~3.5 years of professional experience building production AI services, LLM-powered applications, and scalable backend systems. Experienced with FastAPI, Docker, Kubernetes, AWS, RAG/embedding pipelines, vector DBs, and model serving. Proven ability to design reliable APIs, optimize inference pipelines, and lead cross-functional deliveries. Specialized in PyTorch, TensorFlow, and modern AI frameworks with expertise in healthcare NLP, computer vision, and cybersecurity.
             </p>
             {/* Social Links Row */}
             <div className="flex gap-4 mb-8">
