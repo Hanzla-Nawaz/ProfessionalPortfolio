@@ -12,7 +12,7 @@ const projects = [
     id: 1,
     title: "Diabetes Prediction — BRFSS 2015 Health Indicators",
     description: "Advanced healthcare ML project predicting diabetes using 253K+ health records with Neural Networks, XGBoost, and ensemble methods. Achieved 87.4% accuracy using 22 health indicators including BMI, blood pressure, and lifestyle factors.",
-    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=450",
+    image: "https://hospitalsmagazine.com/wp-content/uploads/2024/03/diabetes-.jpg",
     demoUrl: "https://www.kaggle.com/code/hanzlanawaz/diabetes-health-prediction-using-anns",
     githubUrl: "https://www.kaggle.com/code/hanzlanawaz/diabetes-health-prediction-using-anns",
     docsUrl: "https://www.kaggle.com/code/hanzlanawaz/diabetes-health-prediction-using-anns",
@@ -124,6 +124,32 @@ const projects = [
     technologies: ["Whisper v3", "Mistral 7B", "4-bit Quantization", "NLP"],
     impact: "Automated meeting transcription and summarization using state-of-the-art models"
   },
+  {
+    id: 10,
+    title: "TaskMaker AI — Intelligent Task Completion",
+    description: "A LangGraph-powered AI assistant that helps you complete tasks with automatic success criteria evaluation and feedback loops. Built with modern AI technologies and deployed for seamless user experience.",
+    image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=450",
+    demoUrl: "https://huggingface.co/spaces/NawazHanzla/taskmaker-ai",
+    githubUrl: "https://huggingface.co/spaces/NawazHanzla/taskmaker-ai",
+    docsUrl: "https://huggingface.co/spaces/NawazHanzla/taskmaker-ai",
+    interactive: true,
+    demoType: "huggingface",
+    technologies: ["LangGraph", "AI Assistant", "Task Automation", "Evaluation Systems", "Feedback Loops"],
+    impact: "Intelligent task completion with automatic evaluation and feedback systems"
+  },
+  {
+    id: 11,
+    title: "NutriVision AI — Food Analysis System",
+    description: "An AI-powered system that analyzes food images to provide detailed nutritional information using state-of-the-art computer vision and nutritional APIs.",
+    image: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=450",
+    demoUrl: "https://huggingface.co/spaces/NawazHanzla/NutriVision-AI",
+    githubUrl: "https://huggingface.co/spaces/NawazHanzla/NutriVision-AI",
+    docsUrl: "https://huggingface.co/spaces/NawazHanzla/NutriVision-AI",
+    interactive: true,
+    demoType: "huggingface",
+    technologies: ["Computer Vision", "Food Recognition", "Nutritional Analysis", "API Integration", "Image Processing"],
+    impact: "AI-powered food analysis providing detailed nutritional information from images"
+  },
 ];
 
 export default function Projects() {
@@ -219,25 +245,42 @@ function ProjectCard({ project, index }: { project: any; index: number }) {
               Try the Demo:
             </h4>
             <div className="flex flex-col gap-2">
-              <Input
-                type="file"
-                accept={project.demoType === "image" ? "image/*" : "audio/*"}
-                onChange={handleFileUpload}
-                className="text-xs"
-              />
-              <Button
-                size="sm"
-                variant="secondary"
-                onClick={handleDemo}
-                disabled={!selectedFile}
-                className="w-full"
-              >
-                <Play className="mr-2 h-3 w-3" />
-                {project.demoType === "image" ? "Analyze Nutrition" : "Generate Minutes"}
-              </Button>
+              {project.demoType === "huggingface" ? (
+                <Button
+                  size="sm"
+                  variant="secondary"
+                  onClick={() => window.open(project.demoUrl, "_blank")}
+                  className="w-full"
+                >
+                  <Play className="mr-2 h-3 w-3" />
+                  Launch App
+                </Button>
+              ) : (
+                <>
+                  <Input
+                    type="file"
+                    accept={project.demoType === "image" ? "image/*" : "audio/*"}
+                    onChange={handleFileUpload}
+                    className="text-xs"
+                  />
+                  <Button
+                    size="sm"
+                    variant="secondary"
+                    onClick={handleDemo}
+                    disabled={!selectedFile}
+                    className="w-full"
+                  >
+                    <Play className="mr-2 h-3 w-3" />
+                    {project.demoType === "image" ? "Analyze Nutrition" : "Generate Minutes"}
+                  </Button>
+                </>
+              )}
             </div>
             <div className="mt-2 text-xs text-muted-foreground">
-              Upload {project.demoType === "image" ? "a food image" : "an audio file"} to see {project.demoType === "image" ? "nutritional analysis" : "meeting minutes"}
+              {project.demoType === "huggingface" 
+                ? "Click to launch the interactive Hugging Face app" 
+                : `Upload ${project.demoType === "image" ? "a food image" : "an audio file"} to see ${project.demoType === "image" ? "nutritional analysis" : "meeting minutes"}`
+              }
             </div>
           </div>
         )}
