@@ -25,7 +25,7 @@ const projects = [
     id: 2,
     title: "Lung X-Ray Classification — EfficientNetB4",
     description: "Computer vision breakthrough in medical imaging using transfer learning with EfficientNetB4. Achieved 94.1% accuracy classifying chest X-rays into Normal, Viral Pneumonia, and Lung Opacity with advanced preprocessing and data augmentation.",
-    image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=450",
+    image: "client\public\images\Lung.png",
     demoUrl: "https://www.kaggle.com/code/hanzlanawaz/lung-disease-efficientnetb4-accuracy-94",
     githubUrl: "https://www.kaggle.com/code/hanzlanawaz/lung-disease-efficientnetb4-accuracy-94",
     docsUrl: "https://www.kaggle.com/code/hanzlanawaz/lung-disease-efficientnetb4-accuracy-94",
@@ -38,7 +38,7 @@ const projects = [
     id: 3,
     title: "Breast Cancer Classification — Wisconsin Diagnostic Dataset",
     description: "Medical diagnostics breakthrough using machine learning to classify breast tumors as malignant or benign. Achieved 99.12% accuracy with SVM and XGBoost models using 30 diagnostic features from the Wisconsin dataset.",
-    image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=450",
+    image: "client\public\images\Breast Cancer.png",
     demoUrl: "https://www.kaggle.com/code/hanzlanawaz/99-breast-cancer-prediction-using-xgboost",
     githubUrl: "https://www.kaggle.com/code/hanzlanawaz/99-breast-cancer-prediction-using-xgboost",
     docsUrl: "https://www.kaggle.com/code/hanzlanawaz/99-breast-cancer-prediction-using-xgboost",
@@ -60,7 +60,6 @@ const projects = [
     technologies: ["TensorFlow", "EfficientNetB0", "Computer Vision", "Medical Imaging", "Transfer Learning", "Data Augmentation"],
     impact: "Dermatology AI achieving 92.3% accuracy in melanoma detection using advanced computer vision techniques"
   },
-
 
   {
     id: 5,
