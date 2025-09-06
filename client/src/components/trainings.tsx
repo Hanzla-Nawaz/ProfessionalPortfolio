@@ -63,30 +63,16 @@ const trainings: TrainingItem[] = [
     category: "ml",
     icon: <Brain className="w-6 h-6" />
   },
-  {
-    id: 9,
-    title: "Generative AI with Large Language Models",
-    category: "ml",
-    icon: <Brain className="w-6 h-6" />,
-    status: "Coursera Certified"
-  },
-  {
-    id: 10,
-    title: "Generative AI for Everyone",
-    category: "ml",
-    icon: <Brain className="w-6 h-6" />,
-    status: "Coursera Certified"
-  },
   
   // Programming & Development
   {
-    id: 11,
+    id: 9,
     title: "Programming in Python",
     category: "programming",
     icon: <Code className="w-6 h-6" />
   },
   {
-    id: 12,
+    id: 10,
     title: "Programming in R",
     category: "programming",
     icon: <Code className="w-6 h-6" />
@@ -94,19 +80,19 @@ const trainings: TrainingItem[] = [
   
   // Data & Infrastructure
   {
-    id: 13,
+    id: 11,
     title: "Linux RHEL Intensive Boot Camp",
     category: "data",
     icon: <Server className="w-6 h-6" />
   },
   {
-    id: 14,
+    id: 12,
     title: "Data Collection & Data Wrangling",
     category: "data",
     icon: <Database className="w-6 h-6" />
   },
   {
-    id: 15,
+    id: 13,
     title: "Exploratory Data Analysis",
     category: "data",
     icon: <Database className="w-6 h-6" />

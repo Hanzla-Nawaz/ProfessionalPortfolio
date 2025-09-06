@@ -50,6 +50,8 @@ export default function Certificates() {
       "Introduction to Deep Learning & Neural Networks.pdf",
       "declaracio_titol_master_2022.pdf",
       "Coursera Machine Learning.pdf",
+      "Generative AI for Everyone.pdf",
+      "Generative AI with Large Language Models.pdf",
     ]);
   }, []);
 

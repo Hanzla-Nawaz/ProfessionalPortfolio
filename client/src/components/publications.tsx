@@ -28,34 +28,33 @@ const achievements = [
   },
   {
     id: 3,
-    title: "Generative AI with Large Language Models",
-    type: "Coursera Certification",
-    description: "Completed advanced course on Generative AI and LLMs from DeepLearning.AI & AWS, covering practical implementation and business applications.",
-    badge: "Certified",
-    url: "https://www.coursera.org/account/accomplishments/verify/MLQEY9CWN836"
+    title: "CS50x Puzzle Day 2025",
+    type: "Harvard CS50 Challenge",
+    description: "Successfully completed Harvard's CS50x Puzzle Day challenge, demonstrating advanced problem-solving skills and computational thinking abilities.",
+    badge: "Completed"
   },
   {
     id: 4,
-    title: "Generative AI for Everyone",
-    type: "Coursera Certification",
-    description: "Completed comprehensive course on Generative AI fundamentals, prompt engineering, and AI project lifecycle management from DeepLearning.AI.",
-    badge: "Certified",
-    url: "https://www.coursera.org/account/accomplishments/verify/QVCUBZUBKGPY"
+    title: "ALP 2024 Certificate of Completion",
+    type: "Advanced Learning Program",
+    description: "Completed comprehensive advanced learning program demonstrating commitment to continuous professional development and skill enhancement.",
+    badge: "Completed"
   },
   {
     id: 5,
+    title: "McKinsey & Company Certification",
+    type: "Professional Development",
+    description: "Completed professional certification program from McKinsey & Company, gaining expertise in business strategy and management consulting methodologies.",
+    badge: "Certified"
+  },
+  {
+    id: 6,
     title: "Omdena AI for Good Projects",
     type: "Global Collaboration",
     description: "Led successful AI initiatives addressing real-world challenges in healthcare and misinformation detection, collaborating with international teams.",
     badge: "Lead Contributor"
   },
-  {
-    id: 6,
-    title: "Advanced Cybersecurity Certifications",
-    type: "Professional Development",
-    description: "Completed multiple advanced cybersecurity certifications including ethical hacking, incident response, and security frameworks implementation.",
-    badge: "Certified"
-  }
+
 ];
 
 export default function Publications() {
