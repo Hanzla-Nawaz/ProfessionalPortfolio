@@ -16,9 +16,9 @@ export function smoothScrollTo(elementId: string) {
 }
 
 export function downloadResume() {
-  // In production, this would link to the actual resume PDF
+  // Resume PDF is now in the public folder
   const link = document.createElement("a");
-  link.href = "/assets/Hanzla_Nawaz_Resume.pdf";
+  link.href = "/Hanzla_Nawaz_Resume.pdf";
   link.download = "Hanzla_Nawaz_Resume.pdf";
   document.body.appendChild(link);
   link.click();
