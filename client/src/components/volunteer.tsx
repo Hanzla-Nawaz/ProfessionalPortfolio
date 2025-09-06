@@ -6,10 +6,10 @@ import { useRef } from "react";
 const volunteerWork = [
   {
     id: 1,
-    title: "Stanford University - AI & ML Research",
-    role: "Research Contributor & Student",
-    description: "Completed advanced coursework in Artificial Intelligence and Machine Learning at Stanford University, contributing to cutting-edge research in AI/ML technologies and methodologies.",
-    image: "https://images.unsplash.com/photo-1523050854058-8df90110c9d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
+    title: "Section Leader Mentor - Stanford University",
+    role: "Mentor",
+    description: "Code in Place is a free, human-centered, intro-to-coding course from Stanford University aiming to offer the highest quality free coding course to many students from around the world. Section leader mentors meet multiple times a week to provide students with one-on-one help, and also provide covers for sections. This section leader mentor has successfully supported students through the first half of Stanford's flagship intro to Python course, CS106A. Section leader mentors gain interpersonal skills, practice engaging pedagogy, and demonstrate their mastery of basic Python principles.",
+    image: "https://github.com/Hanzla-Nawaz/ProfessionalPortfolio/blob/main/client/public/images/stanford.svg",
     credentialUrl: "https://digitalcredential.stanford.edu/check/D06E68630B9A74AC34268A5CD909C7DE855E5202777D399588E12EBF741530C7RjNrbWpnaHNNdTBvWFpqNjNPK3dPWVg5SVJuZXVPMTU5L2MxckhtRzlGZmlWZFhx"
   },
   {

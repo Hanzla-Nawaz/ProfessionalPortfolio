@@ -14,7 +14,7 @@ const experiences: ExperienceItem[] = [
   {
     id: 1,
     period: "Jul 2024 - Present",
-    title: "Associate Machine Learning Engineer",
+    title: "Machine Learning Engineer",
     company: "XEVEN SOLUTIONS (Pvt) Ltd. | Lahore, Pakistan",
     description: "• Built LLM-powered production services with FastAPI, OpenAI & open-source models; implemented RAG, embeddings, and vector search for domain retrieval.\n• Designed PostgreSQL and MS SQL schemas for logging, bot history, and audit; improved observability and reduced query latencies.\n• Optimized inference pipelines (QLoRA/LoRA) to reduce serving costs and improve throughput for healthcare NLP tasks.\n• Worked with product and DevOps to containerize services (Docker) and prepare Kubernetes manifests for scale.",
     side: "left"
