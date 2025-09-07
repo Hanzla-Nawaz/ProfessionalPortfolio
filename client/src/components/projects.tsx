@@ -35,7 +35,7 @@ const projects = [
   {
     id: 3,
     title: "Diabetes Prediction — BRFSS 2015 Health Indicators",
-    description: "Advanced healthcare ML project predicting diabetes using 253K+ health records with Neural Networks, XGBoost, and ensemble methods. Achieved 87.4% accuracy using 22 health indicators including BMI, blood pressure, and lifestyle factors.",
+    description: "Advanced healthcare ML project predicting diabetes using 253K+ health records with Neural Networks, XGBoost, and ensemble methods. Achieved 87.4% accuracy using 22 health indicators and lifestyle factors.",
     image: "https://hospitalsmagazine.com/wp-content/uploads/2024/03/diabetes-.jpg",
     demoUrl: "https://www.kaggle.com/code/hanzlanawaz/diabetes-health-prediction-using-anns",
     githubUrl: "https://www.kaggle.com/code/hanzlanawaz/diabetes-health-prediction-using-anns",
