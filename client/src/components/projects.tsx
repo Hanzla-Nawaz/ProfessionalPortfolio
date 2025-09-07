@@ -51,7 +51,7 @@ const projects = [
     id: 4,
     title: "Melanoma Cancer Prediction — Dermoscopic Image Classification",
     description: "Computer vision breakthrough in dermatology using EfficientNetB0 for skin lesion classification. Achieved 92.3% accuracy in detecting malignant vs benign melanoma from dermoscopic images with advanced data augmentation and transfer learning.",
-    image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=450",
+    image: "/images/Melanoma.png",
     demoUrl: "https://colab.research.google.com/drive/1RvmyZhmD-hT9NpZ8u8bEoyWp28yl0iR0?usp=sharing",
     githubUrl: "https://colab.research.google.com/drive/1RvmyZhmD-hT9NpZ8u8bEoyWp28yl0iR0?usp=sharing",
     docsUrl: "https://colab.research.google.com/drive/1RvmyZhmD-hT9NpZ8u8bEoyWp28yl0iR0?usp=sharing",
