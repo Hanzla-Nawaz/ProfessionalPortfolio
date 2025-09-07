@@ -1,8 +1,6 @@
-import { useState } from "react";
-import { ExternalLink, Github, FileText, Upload, Play } from "lucide-react";
+import { ExternalLink, Github, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { cn } from "@/lib/utils";
@@ -184,21 +182,6 @@ export default function Projects() {
 
 function ProjectCard({ project, index }: { project: any; index: number }) {
   const { ref, isVisible } = useScrollAnimation();
-  const [selectedFile, setSelectedFile] = useState<File | null>(null);
-
-  const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0];
-    if (file) {
-      setSelectedFile(file);
-    }
-  };
-
-  const handleDemo = () => {
-    if (project.interactive && selectedFile) {
-      // In a real implementation, this would process the file
-      alert(`Analyzing ${selectedFile.name}... This is a demo implementation.`);
-    }
-  };
 
   return (
     <Card
@@ -237,52 +220,6 @@ function ProjectCard({ project, index }: { project: any; index: number }) {
           </div>
         )}
 
-        {/* Interactive ML Demo Widget */}
-        {project.interactive && (
-          <div className="bg-muted p-4 rounded-lg mb-4">
-            <h4 className="text-sm font-medium text-foreground mb-2">
-              Try the Demo:
-            </h4>
-            <div className="flex flex-col gap-2">
-              {project.demoType === "huggingface" ? (
-                <Button
-                  size="sm"
-                  variant="secondary"
-                  onClick={() => window.open(project.demoUrl, "_blank")}
-                  className="w-full"
-                >
-                  <Play className="mr-2 h-3 w-3" />
-                  Launch App
-                </Button>
-              ) : (
-                <>
-                  <Input
-                    type="file"
-                    accept={project.demoType === "image" ? "image/*" : "audio/*"}
-                    onChange={handleFileUpload}
-                    className="text-xs"
-                  />
-                  <Button
-                    size="sm"
-                    variant="secondary"
-                    onClick={handleDemo}
-                    disabled={!selectedFile}
-                    className="w-full"
-                  >
-                    <Play className="mr-2 h-3 w-3" />
-                    {project.demoType === "image" ? "Analyze Nutrition" : "Generate Minutes"}
-                  </Button>
-                </>
-              )}
-            </div>
-            <div className="mt-2 text-xs text-muted-foreground">
-              {project.demoType === "huggingface" 
-                ? "Click to launch the interactive Hugging Face app" 
-                : `Upload ${project.demoType === "image" ? "a food image" : "an audio file"} to see ${project.demoType === "image" ? "nutritional analysis" : "meeting minutes"}`
-              }
-            </div>
-          </div>
-        )}
 
         <div className="flex flex-col gap-2">
           <Button
