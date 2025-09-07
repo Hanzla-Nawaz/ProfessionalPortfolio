@@ -81,7 +81,7 @@ const projects = [
     docsUrl: "https://colab.research.google.com/drive/1RvmyZhmD-hT9NpZ8u8bEoyWp28yl0iR0?usp=sharing",
     interactive: true,
     demoType: "colab",
-    technologies: ["TensorFlow", "EfficientNetB0", "Computer Vision", "Medical Imaging", "Transfer Learning", "Data Augmentation"],
+    technologies: ["TensorFlow", "EfficientNetB0", "Computer Vision", "Medical Imaging", "Transfer Learning"],
     impact: "Dermatology AI achieving 92.3% accuracy in melanoma detection using advanced computer vision techniques"
   },
   {
