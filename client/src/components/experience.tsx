@@ -47,7 +47,7 @@ const experiences: ExperienceItem[] = [
       "• Implemented basic model and system monitoring using Prometheus and Grafana to track performance metrics and application health.\n" +
       "• Deployed ML-backed services on AWS, utilizing Lambda for serverless execution and S3 for data and artifact storage.\n" +
       "• Assisted in setting up CI/CD pipelines to automate testing and deployment workflows, improving development efficiency and reliability.",
-    side: "right"
+    side: "left"
   },
   {
   id: 5,
@@ -61,7 +61,7 @@ const experiences: ExperienceItem[] = [
     "• Governance Frameworks: Authored IT/OT policies, procedures, and operating models, ensuring compliance for SOC 1 Type II audits.\n" +
     "• Business Development: Prepared technical reports and supported business development with RFI & RFP responses.\n" +
     "• Tool Expertise: Deployed Wazuh (SIEM), Nessus (VA), Metasploit, and NGINX WAF to secure OT environments.",
-  side: "left"
+  side: "right"
   },
   {
     id: 6,
@@ -73,7 +73,7 @@ const experiences: ExperienceItem[] = [
       "• Automation: Scripted Bash and Python utilities for log transfers, backups (Rsync), and resource monitoring (top, sar), improving operational efficiency by 40%.\n" +
       "• Security Hardening: Configured iptables firewalls, managed user permissions (ACL, chmod), and applied system patches via YUM.\n" +
       "• Network Troubleshooting: Diagnosed and resolved connectivity issues using tcpdump, Wireshark, and traceroute.",
-    side: "right"
+    side: "left"
   },
   {
     id: 7,
