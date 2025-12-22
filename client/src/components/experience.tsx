@@ -36,13 +36,31 @@ const experiences: ExperienceItem[] = [
     side: "right"
   },
   {
-    id: 4,
-    period: "Jan 2021 - Aug 2022",
-    title: "Cybersecurity Analyst",
-    company: "Ghanimah Labs | Lahore, Pakistan",
-    description: "Led ISO 27001 implementations, designed secure OT/IT architectures, and reduced vulnerabilities by 40% through comprehensive risk assessments. Implemented security frameworks and conducted penetration testing for enterprise clients.",
-    side: "left"
+  id: 4,
+  period: "Jan 2021 - Aug 2022",
+  title: "Cyber Security Analyst",
+  company: "Al Nafi Cloud | Markham, Ontario, Canada · Remote",
+  description:
+    "• IT/OT Security Strategy: Designed compliant cloud architectures (AWS/GCP) aligned with ISO 27001/27017/27018 and IEC 62443, reducing vulnerabilities by 30% through CIS v8 controls.\n" +
+    "• Risk Management: Conducted OT/ICS risk assessments (NIST, IEC 62443) and penetration testing, mitigating critical threats for industrial clients in the energy and manufacturing sectors.\n" +
+    "• SOC Development: Led the design of IT/OT Security Operations Centers (SOC), integrating SIEM (Wazuh), IDS/IPS, and custom use cases for threat detection.\n" +
+    "• Governance Frameworks: Authored IT/OT policies, procedures, and operating models, ensuring compliance for SOC 1 Type II audits.\n" +
+    "• Business Development: Prepared technical reports and supported business development with RFI & RFP responses.\n" +
+    "• Tool Expertise: Deployed Wazuh (SIEM), Nessus (VA), Metasploit, and NGINX WAF to secure OT environments.",
+  side: "left"
   }
+{
+  id: 5,
+  period: "Jan 2020 - Jan 2021",
+  title: "Trainee System Administrator",
+  company: "Al Nafi Cloud | Markham, Ontario, Canada · Remote",
+  description:
+    "• Infrastructure Management: Installed and configured RHEL, CentOS, and Ubuntu systems, resolving 50+ hardware and network issues monthly.\n" +
+    "• Automation: Scripted Bash and Python utilities for log transfers, backups (Rsync), and resource monitoring (top, sar), improving operational efficiency by 40%.\n" +
+    "• Security Hardening: Configured iptables firewalls, managed user permissions (ACL, chmod), and applied system patches via YUM.\n" +
+    "• Network Troubleshooting: Diagnosed and resolved connectivity issues using tcpdump, Wireshark, and traceroute.",
+  side: "right"
+}
 ];
 
 export default function Experience() {
