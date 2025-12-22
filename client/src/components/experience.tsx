@@ -60,7 +60,22 @@ const experiences: ExperienceItem[] = [
     "• Security Hardening: Configured iptables firewalls, managed user permissions (ACL, chmod), and applied system patches via YUM.\n" +
     "• Network Troubleshooting: Diagnosed and resolved connectivity issues using tcpdump, Wireshark, and traceroute.",
   side: "right"
+},
+{
+  id: 6,
+  period: "Jun 2022 - Jul 2023",
+  title: "Data Science Intern | Remote",
+  company: "iNeuron.ai",
+  description:
+    "• Worked on applied machine learning use cases focused on health analytics and personalized recommendations, contributing to data-driven decision support systems.\n" +
+    "• Developed end-to-end ML workflows including data preprocessing, model training, evaluation, and inference, gaining hands-on experience with the full ML lifecycle.\n" +
+    "• Built backend services using Python and Flask to support real-time data processing and ML inference endpoints.\n" +
+    "• Implemented basic model and system monitoring using Prometheus and Grafana to track performance metrics and application health.\n" +
+    "• Deployed ML-backed services on AWS, utilizing Lambda for serverless execution and S3 for data and artifact storage.\n" +
+    "• Assisted in setting up CI/CD pipelines to automate testing and deployment workflows, improving development efficiency and reliability.",
+  side: "right"
 }
+
 ];
 
 export default function Experience() {
