@@ -12,15 +12,23 @@ interface ExperienceItem {
 
 const experiences: ExperienceItem[] = [
   {
-    id: 1,
-    period: "Jul 2024 - Present",
+    id :1,
+    period: "Sep 2025 - Present",
+    title: "Machine Learning Engineer",
+    company: "HYLY.AI"
+    description: "•	build scalable, production-ready AI systems improving reliability and performance.\n•	Integrated GCP Cloud Tracing across microservices, boosting debugging speed by 70% and reducing manual bug reporting by 60%.\n•	Built monitoring dashboards and automated alerting pipelines, enhancing visibility and incident response.\n•	Automated ML model evaluation and testing, ensuring continuous performance tracking and scalable deployment.\n•	Deployed and optimized LLMs and AI models, lowering system error rates by 15% and improving customer satisfaction.
+"
+  }
+  {
+    id: 2,
+    period: "Jul 2024 - Sep 2025",
     title: "Machine Learning Engineer",
     company: "XEVEN SOLUTIONS (Pvt) Ltd. | Lahore, Pakistan",
     description: "• Built LLM-powered production services with FastAPI, OpenAI & open-source models; implemented RAG, embeddings, and vector search for domain retrieval.\n• Designed PostgreSQL and MS SQL schemas for logging, bot history, and audit; improved observability and reduced query latencies.\n• Optimized inference pipelines (QLoRA/LoRA) to reduce serving costs and improve throughput for healthcare NLP tasks.\n• Worked with product and DevOps to containerize services (Docker) and prepare Kubernetes manifests for scale.",
     side: "left"
   },
   {
-    id: 2,
+    id: 3,
     period: "Nov 2023 - May 2024",
     title: "Machine Learning Engineer",
     company: "Omdena | Remote",
@@ -28,7 +36,7 @@ const experiences: ExperienceItem[] = [
     side: "right"
   },
   {
-    id: 3,
+    id: 4,
     period: "Jan 2021 - Aug 2022",
     title: "Cybersecurity Analyst",
     company: "Ghanimah Labs | Lahore, Pakistan",
