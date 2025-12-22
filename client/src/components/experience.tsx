@@ -36,19 +36,19 @@ const experiences: ExperienceItem[] = [
     side: "right"
   },
   {
-  id: 4,
-  period: "Jun 2022 - Jul 2023",
-  title: "Data Science Intern | Remote",
-  company: "iNeuron.ai",
-  description:
-    "• Worked on applied machine learning use cases focused on health analytics and personalized recommendations, contributing to data-driven decision support systems.\n" +
-    "• Developed end-to-end ML workflows including data preprocessing, model training, evaluation, and inference, gaining hands-on experience with the full ML lifecycle.\n" +
-    "• Built backend services using Python and Flask to support real-time data processing and ML inference endpoints.\n" +
-    "• Implemented basic model and system monitoring using Prometheus and Grafana to track performance metrics and application health.\n" +
-    "• Deployed ML-backed services on AWS, utilizing Lambda for serverless execution and S3 for data and artifact storage.\n" +
-    "• Assisted in setting up CI/CD pipelines to automate testing and deployment workflows, improving development efficiency and reliability.",
-  side: "right"
-},
+    id: 4,
+    period: "Jun 2022 - Jul 2023",
+    title: "Data Science Intern | Remote",
+    company: "iNeuron.ai",
+    description:
+      "• Worked on applied machine learning use cases focused on health analytics and personalized recommendations, contributing to data-driven decision support systems.\n" +
+      "• Developed end-to-end ML workflows including data preprocessing, model training, evaluation, and inference, gaining hands-on experience with the full ML lifecycle.\n" +
+      "• Built backend services using Python and Flask to support real-time data processing and ML inference endpoints.\n" +
+      "• Implemented basic model and system monitoring using Prometheus and Grafana to track performance metrics and application health.\n" +
+      "• Deployed ML-backed services on AWS, utilizing Lambda for serverless execution and S3 for data and artifact storage.\n" +
+      "• Assisted in setting up CI/CD pipelines to automate testing and deployment workflows, improving development efficiency and reliability.",
+    side: "right"
+  },
   {
   id: 5,
   period: "Jan 2021 - Aug 2022",
@@ -63,32 +63,32 @@ const experiences: ExperienceItem[] = [
     "• Tool Expertise: Deployed Wazuh (SIEM), Nessus (VA), Metasploit, and NGINX WAF to secure OT environments.",
   side: "left"
   },
-{
-  id: 6,
-  period: "Jan 2020 - Jan 2021",
-  title: "Trainee System Administrator",
-  company: "Al Nafi Cloud | Markham, Ontario, Canada · Remote",
-  description:
-    "• Infrastructure Management: Installed and configured RHEL, CentOS, and Ubuntu systems, resolving 50+ hardware and network issues monthly.\n" +
-    "• Automation: Scripted Bash and Python utilities for log transfers, backups (Rsync), and resource monitoring (top, sar), improving operational efficiency by 40%.\n" +
-    "• Security Hardening: Configured iptables firewalls, managed user permissions (ACL, chmod), and applied system patches via YUM.\n" +
-    "• Network Troubleshooting: Diagnosed and resolved connectivity issues using tcpdump, Wireshark, and traceroute.",
-  side: "right"
-},
-{
-  id: 7,
-  period: "Jun 2022 - Jul 2023",
-  title: "Data Science Intern | Remote",
-  company: "iNeuron.ai",
-  description:
-    "• Worked on applied machine learning use cases focused on health analytics and personalized recommendations, contributing to data-driven decision support systems.\n" +
-    "• Developed end-to-end ML workflows including data preprocessing, model training, evaluation, and inference, gaining hands-on experience with the full ML lifecycle.\n" +
-    "• Built backend services using Python and Flask to support real-time data processing and ML inference endpoints.\n" +
-    "• Implemented basic model and system monitoring using Prometheus and Grafana to track performance metrics and application health.\n" +
-    "• Deployed ML-backed services on AWS, utilizing Lambda for serverless execution and S3 for data and artifact storage.\n" +
-    "• Assisted in setting up CI/CD pipelines to automate testing and deployment workflows, improving development efficiency and reliability.",
-  side: "right"
-}
+  {
+    id: 6,
+    period: "Jan 2020 - Jan 2021",
+    title: "Trainee System Administrator",
+    company: "Al Nafi Cloud | Markham, Ontario, Canada · Remote",
+    description:
+      "• Infrastructure Management: Installed and configured RHEL, CentOS, and Ubuntu systems, resolving 50+ hardware and network issues monthly.\n" +
+      "• Automation: Scripted Bash and Python utilities for log transfers, backups (Rsync), and resource monitoring (top, sar), improving operational efficiency by 40%.\n" +
+      "• Security Hardening: Configured iptables firewalls, managed user permissions (ACL, chmod), and applied system patches via YUM.\n" +
+      "• Network Troubleshooting: Diagnosed and resolved connectivity issues using tcpdump, Wireshark, and traceroute.",
+    side: "right"
+  },
+  {
+    id: 7,
+    period: "Jun 2022 - Jul 2023",
+    title: "Data Science Intern | Remote",
+    company: "iNeuron.ai",
+    description:
+      "• Worked on applied machine learning use cases focused on health analytics and personalized recommendations, contributing to data-driven decision support systems.\n" +
+      "• Developed end-to-end ML workflows including data preprocessing, model training, evaluation, and inference, gaining hands-on experience with the full ML lifecycle.\n" +
+      "• Built backend services using Python and Flask to support real-time data processing and ML inference endpoints.\n" +
+      "• Implemented basic model and system monitoring using Prometheus and Grafana to track performance metrics and application health.\n" +
+      "• Deployed ML-backed services on AWS, utilizing Lambda for serverless execution and S3 for data and artifact storage.\n" +
+      "• Assisted in setting up CI/CD pipelines to automate testing and deployment workflows, improving development efficiency and reliability.",
+    side: "right"
+  }
 
 ];
 
