@@ -17,6 +17,7 @@ const experiences: ExperienceItem[] = [
     title: "Machine Learning Engineer",
     company: "HYLY.AI"
     description: "•	build scalable, production-ready AI systems improving reliability and performance.\n•	Integrated GCP Cloud Tracing across microservices, boosting debugging speed by 70% and reducing manual bug reporting by 60%.\n•	Built monitoring dashboards and automated alerting pipelines, enhancing visibility and incident response.\n•	Automated ML model evaluation and testing, ensuring continuous performance tracking and scalable deployment.\n•	Deployed and optimized LLMs and AI models, lowering system error rates by 15% and improving customer satisfaction".,
+    side: "right"
   },
   {
     id: 2,
