@@ -48,7 +48,7 @@ const experiences: ExperienceItem[] = [
     "• Business Development: Prepared technical reports and supported business development with RFI & RFP responses.\n" +
     "• Tool Expertise: Deployed Wazuh (SIEM), Nessus (VA), Metasploit, and NGINX WAF to secure OT environments.",
   side: "left"
-  }
+  },
 {
   id: 5,
   period: "Jan 2020 - Jan 2021",
